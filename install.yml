@@ -1,0 +1,4 @@
+- link:
+    ~/.tmux.conf: tmux.conf
+    ~/.config/nvim/config: nvim
+    ~/.config/nvim/init.vim: vimrc
