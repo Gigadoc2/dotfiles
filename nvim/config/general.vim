@@ -2,6 +2,9 @@
 " use the mouse
 set mouse=a
 
+" use the x clipboard
+set clipboard+=unnamedplus
+
 " enable 24bit colour in terminals
 set termguicolors
 
