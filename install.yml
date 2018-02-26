@@ -3,3 +3,4 @@
     ~/.config/nvim/init.vim: nvim/init.vim
     ~/.config/nvim/config: nvim/config
     ~/.config/nvim/ftdetect: nvim/ftdetect
+    ~/.ssh/config: ssh_config
