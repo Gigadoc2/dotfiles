@@ -2,4 +2,7 @@
 Host *
 	ServerAliveInterval 60
 
-Include config.d/*
+# Options only applicable on this Machine
+Include config.local
+# Settings for remote Hosts (Host example.net\n<TAB>User root)
+Include hosts.d/*
