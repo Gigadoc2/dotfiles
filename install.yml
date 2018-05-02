@@ -1,6 +1,7 @@
 - link:
     ~/.tmux.conf: tmux.conf
     ~/.config/nvim/init.vim: nvim/init.vim
+    ~/.config/nvim/autoload: nvim/autoload
     ~/.config/nvim/config: nvim/config
     ~/.config/nvim/ftdetect: nvim/ftdetect
     ~/.ssh/config: ssh_config
