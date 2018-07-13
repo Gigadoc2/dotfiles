@@ -9,16 +9,17 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod4
+set $mod Mod1
 
 # configure hotkeys
-bindsym XF86MonBrightnessDown exec --no-startup-id dbus-send --type=method_call --dest=org.cinnamon.SettingsDaemon.Power /org/cinnamon/SettingsDaemon/Power org.cinnamon.SettingsDaemon.Power.Screen.StepDown
-bindsym XF86MonBrightnessUp exec --no-startup-id dbus-send --type=method_call --dest=org.cinnamon.SettingsDaemon.Power /org/cinnamon/SettingsDaemon/Power org.cinnamon.SettingsDaemon.Power.Screen.StepUp
+# for some reason, pkexec needs to write to stdout?
+bindsym XF86MonBrightnessDown exec --no-startup-id "pkexec lxqt-backlight_backend --dec > /dev/null"
+bindsym XF86MonBrightnessUp exec --no-startup-id "pkexec lxqt-backlight_backend --inc > /dev/null"
 bindsym XF86AudioMicMute exec --no-startup-id amixer set Capture toggle
-bindsym XF86ScreenSaver exec cinnamon-screensaver-command -l
-bindsym XF86Sleep exec --no-startup-id systemctl suspend
-bindsym Print exec --no-startup-id gnome-screenshot
-#bindsym XF86Launch1 exec --no-startup-id hackbuzzer
+bindsym XF86ScreenSaver exec --no-startup-id loginctl lock-session
+bindsym XF86Sleep exec --no-startup-id loginctl suspend
+bindsym Print exec --no-startup-id spectacle
+bindsym XF86Launch1 exec --no-startup-id hackbuzzer
 
 for_window [class="Steam"] floating enable
 for_window [class="Steam" title="^Steam$"] floating disable
@@ -36,6 +37,7 @@ for_window [class="FTL"] floating enable
 for_window [title="Planetary Annihilation"] floating enable
 for_window [title="Dateioperationen"] floating enable
 for_window [window_role="kmail-composer*"] floating enable
+for_window [title="gns3_console — Konsole"] floating enable
 
 # font for window titles. ISO 10646 = Unicode
 font pango:DejaVu Sans, Icons 8
@@ -177,7 +179,7 @@ bindsym $mod+Shift+C reload
 bindsym $mod+Shift+R restart
 # exit i3 (logs you out of your X session)
 #bindsym $mod+Shift+E exit
-bindsym $mod+Shift+E exec cinnamon-session-quit --power-off
+bindsym $mod+Shift+E exec --no-startup-id lxqt-leave
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -235,3 +237,7 @@ bar {
         urgent_workspace   #98971a #98971a #1d2021
     }
 }
+
+exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Natural Scrolling Enabled" 1
+exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
+exec --no-startup-id xset -dpms
