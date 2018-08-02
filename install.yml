@@ -7,3 +7,5 @@
     ~/.ssh/config: ssh_config
     ~/.config/rofi: rofi
     ~/.config/i3: i3
+    ~/.local/share/konsole/Gruvbox_dark.colorscheme: gruvbox-contrib/konsole/Gruvbox_dark.colorscheme
+    ~/.local/share/konsole/Gruvbox_light.colorscheme: gruvbox-contrib/konsole/Gruvbox_light.colorscheme

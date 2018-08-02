@@ -1,3 +1,6 @@
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
+[submodule "gruvbox-contrib"]
+	path = gruvbox-contrib
+	url = https://github.com/morhetz/gruvbox-contrib.git
