@@ -11,6 +11,9 @@ Plug 'saltstack/salt-vim'
 Plug 'cometsong/ferm.vim'
 Plug 'PProvost/vim-ps1'
 
+" latex tools
+Plug 'lervag/vimtex'
+
 call plug#end()
 
 " Gruvbox
