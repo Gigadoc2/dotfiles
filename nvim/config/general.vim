@@ -19,8 +19,8 @@ set bg=dark " this actually sets the background color in gruvbox
 " displays current position in the status line
 set ruler
 
-" enables line-numbers
-set number
+" enables (hybrid relative/absolute) line-numbers
+set number relativenumber
 
 " display a colored column for the 80 character convention
 if exists("+colorcolumn")
