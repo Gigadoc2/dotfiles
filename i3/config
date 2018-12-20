@@ -17,7 +17,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id "dbus-send --dest=org.cinnamo
 bindsym XF86MonBrightnessUp exec --no-startup-id "dbus-send --dest=org.cinnamon.SettingsDaemon.Power --type=method_call /org/cinnamon/SettingsDaemon/Power org.cinnamon.SettingsDaemon.Power.Screen.StepUp"
 bindsym XF86AudioMicMute exec --no-startup-id amixer set Capture toggle
 bindsym XF86ScreenSaver exec --no-startup-id loginctl lock-session
-bindsym XF86Sleep exec --no-startup-id loginctl suspend
+bindsym XF86Sleep exec --no-startup-id systemctl suspend
 bindsym Print exec --no-startup-id spectacle
 bindsym XF86Launch1 exec --no-startup-id hackbuzzer
 
@@ -211,7 +211,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
     status_command i3status
-	tray_output none
+    tray_output none
     colors {
         background #1D2021
         statusline #ebdbb2
