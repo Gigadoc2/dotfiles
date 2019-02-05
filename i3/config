@@ -41,6 +41,7 @@ for_window [title="Planetary Annihilation"] floating enable
 for_window [title="Dateioperationen"] floating enable
 for_window [window_role="kmail-composer*"] floating enable
 for_window [title="gns3_console — Konsole"] floating enable
+for_window [class="Gnome-pomodoro"] floating enable
 
 # font for window titles. ISO 10646 = Unicode
 font pango:DejaVu Sans, Icons 8
