@@ -21,3 +21,14 @@ let g:gruvbox_italic = 1 " enable italcs, we can handle it
 
 " indentLine
 let g:indentLine_color_gui = '#504945'
+
+" vimtex settings
+let g:vimtex_compiler_latexmk = {
+    \ 'options' : [
+    \   '-shell-escape',
+    \   '-verbose',
+    \   '-file-line-error',
+    \   '-synctex=1',
+    \   '-interaction=nonstopmode',
+    \ ],
+    \}
