@@ -6,7 +6,7 @@ URxvt.scrollBar: false
 URxvt.saveLines: 2048
 
 ! Include colors
-#include "~/.local/share/gruvbox-contrib/xresources/gruvbox-dark.xresources"
+#include ".local/share/gruvbox-contrib/xresources/gruvbox-dark.xresources"
 
 Xft.antialias: 1
 Xft.hinting: 1
