@@ -41,7 +41,13 @@ non-public repository cloned (not bare, confusingly) into
 `$HOME/.local/share/dotfiles-private`. I link to those files wherever I do not
 want to include them here (and then instead commit the symlinks).
 
+## How to not have the README.md clutter your `$HOME`
+This repo is not meant to be cloned anyway, but you might wonder why I would
+want to bear a `README.md` sitting around in my home directory. I don't and
+thanks to [a smart person][3] I don't have to 😀
+
 [1]: <https://en.wikipedia.org/wiki/Hidden_file_and_hidden_directory#Unix_and_Unix-like_environments> "Wikipedia on dotfiles"
 [2]: <https://wiki.archlinux.org/index.php/Dotfiles#Tracking_dotfiles_directly_with_Git> "Tracking dotfiles directly with Git"
+[3]: <https://github.com/TheLocehiliosan/yadm/issues/93#issuecomment-582585718>
 [^1]: Not entirely true, there exists a second, private repository, see
 "Repository structure".
