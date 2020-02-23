@@ -1,0 +1,17 @@
+[user]
+	name = Gigadoc2
+	email = gigadoc2@revreso.de
+	signingkey = 422DE3FA
+[color]
+	ui = auto
+[commit]
+	gpgsign = true
+[core]
+	autocrlf = input
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[credential]
+	helper = /usr/lib/git-core/git-credential-libsecret
