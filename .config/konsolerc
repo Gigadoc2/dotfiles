@@ -1,0 +1,41 @@
+[$Version]
+update_info=konsole.upd:2.9.0-global-options
+
+[Colors]
+CurrentPalette=Forty Colors
+
+[Desktop Entry]
+DefaultProfile=Bash Default.profile
+
+[DownloadDialog Settings]
+Height 1080=502
+Width 1920=700
+
+[Favorite Profiles]
+Favorites=Bash Default.profile
+
+[KonsoleWindow]
+SaveGeometryOnExit=false
+ShowMenuBarByDefault=false
+
+[MainWindow]
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAAA74AAAQYAAAABAAAAAQAAAAIAAAACPwAAAAA
+ToolBarsMovable=Disabled
+Window-Maximized 1015x1920=true
+Window-Maximized 1024x1280=true
+Window-Maximized 1050x1400=true
+Window-Maximized 1080x1920=true
+Window-Maximized 1080x2944=true
+Window-Maximized 1088x4480=true
+Window-Maximized 1200x1920=true
+Window-Maximized 480x640=true
+Window-Maximized 600x800=true
+Window-Maximized 649x845=true
+Window-Maximized 720x1280=true
+Window-Maximized 900x1240=true
+Window-Maximized 995x1280=true
+
+[TabBar]
+TabBarPosition=Top
+TabBarVisibility=ShowTabBarWhenNeeded
