@@ -25,10 +25,6 @@ if [[ -z ${EDITOR+x} ]]; then
     export EDITOR="nvim"
 fi
 
-# Try to enable the "Command not found" hook ("pacman -S pkgfile" to install it).
-# See also: https://wiki.archlinux.org/index.php/Bash#The_.22command_not_found.22_hook
-[ -r /usr/share/doc/pkgfile/command-not-found.bash ] && . /usr/share/doc/pkgfile/command-not-found.bash
-
 # load aliases
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
 
