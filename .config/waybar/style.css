@@ -1,0 +1,86 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: Cantarell, Icons;
+    font-size: 15px;
+    min-height: 0;
+    background: transparent;
+}
+
+window {
+    background: #2d2d2d;
+    color: #dddddd;
+}
+
+window#waybar {
+    border-bottom: 1px solid #484848;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button {
+    padding: 0 5px;
+    background: transparent;
+    color: #dcdcdc;
+    border-bottom: 1px solid #484848;
+}
+
+#workspaces button.focused {
+    background: #525252;
+}
+
+#workspaces button.urgent {
+    background: rgba(214,93,14,0.8);
+}
+
+#mode {
+    background: rgba(184,187,38,0.8);
+    color: #282828;
+}
+
+#window {
+    padding: 0 8px;
+}
+
+#clock, #cpu, #custom-bat0, #custom-bat1, #memory, #backlight, #network, #pulseaudio, #tray, #mode{
+    padding: 0 8px;
+    margin: 0 4px;
+}
+
+#tray {
+    padding: 0 4px;
+}
+
+#clock {
+    margin-right: 0px;
+}
+
+#custom-bat0.charging,
+#custom-bat1.charging {
+    color: #9BC89D;
+}
+
+#custom-bat0.full,
+#custom-bat1.full {
+    color: #929292;
+}
+
+#custom-bat0.warning:not(.charging):not(.full),
+#custom-bat1.warning:not(.charging):not(.full) {
+    color: #fabd2f;
+}
+
+@keyframes blink {
+    to {
+        color: #cc241d;
+    }
+}
+
+#custom-bat0.critical:not(.charging):not(.full),
+#custom-bat1.critical:not(.charging):not(.full) {
+    color: #fabd2f;
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}

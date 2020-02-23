@@ -1,0 +1,28 @@
+#
+# Rules for special windows
+#
+
+for_window [class="Steam"] floating enable
+for_window [class="Steam" title="^Steam$"] floating disable
+for_window [class="Qlc"] floating enable
+for_window [class="Qlc" title="Q Light Controller"] floating disable
+for_window [class="DungeonDefenders-x86"] floating enable
+for_window [class="Pesterchum.py"] floating enable
+for_window [class="Qt-recordMyDesktop"] floating enable
+for_window [class="Fs2_launcher"] floating enable
+for_window [class="Wxlauncher"] floating enable
+for_window [class="Wine"] floating enable
+for_window [class="Ekiga"] floating enable
+for_window [class="openjk.x86_64"] floating enable
+for_window [class="FTL"] floating enable
+for_window [title="Planetary Annihilation"] floating enable
+for_window [title="Dateioperationen"] floating enable
+for_window [window_role="kmail-composer*"] floating enable
+for_window [title="gns3_console — Konsole"] floating enable
+for_window [class="Gnome-pomodoro"] floating enable
+for_window [class="usbguard-applet-qt"] floating enable
+for_window [class="nl.ru.oop.*"] floating enable
+for_window [app_id="evolution"] floating enable
+for_window [app_id="evolution" title=" Evolution$"] floating disable
+for_window [title="^Android Emulator -"] floating enable
+for_window [title="^Emulator$"] floating enable

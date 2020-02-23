@@ -1,0 +1,5 @@
+exec mako
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec python /home/gigadoc2/Projekte/desktop/lock-o-matic/lockomatic.py
+exec swayidle -w \
+    timeout 0 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'

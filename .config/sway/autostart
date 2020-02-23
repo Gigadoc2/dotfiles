@@ -1,0 +1,2 @@
+exec /usr/bin/nextcloud
+exec /usr/bin/kdeconnect-indicator

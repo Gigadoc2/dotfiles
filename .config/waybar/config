@@ -1,0 +1,46 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 26,
+
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["sway/window"],
+    "modules-right":
+        ["network#wifi", "pulseaudio",
+        "custom/bat0", "clock"],
+
+    "sway/mode": {
+        "tooltip": false
+    },
+
+    "sway/window": {
+        "tooltip": false
+    },
+
+    "network#wifi": {
+        "interface": "wlan0",
+        "format": " {essid} ({signaldBm})",
+        "tooltip": false
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": " mutd",
+        "format-icons": {
+            "default": ["", ""]
+        },
+        "tooltip": false
+    },
+
+    "custom/bat0": {
+        "exec": "~/Projekte/desktop/waybar-scripts/battery.py BAT0",
+        "return-type": "json",
+        "format": "{icon} {}",
+        "format-icons": ["", "", "", ""]
+    },
+
+    "clock": {
+        "format": "{:%F %H:%M}",
+        "tooltip": false
+    }
+}
