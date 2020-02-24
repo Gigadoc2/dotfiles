@@ -35,8 +35,6 @@ set $term konsole
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
 set $menu "rofi -show drun"
-# The lockscreen
-set $lock swaylock -i "/home/gigadoc2/.wallpaper_lock"
 # Set up workspaces with names
 set $ws1 1::sh
 set $ws2 2:www
@@ -92,6 +90,16 @@ output 'NEC Corporation LCD195NX 94T19400NB' {
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
+
+set $locker swaylock -f -c 2d2d2d --inside-color 000000b3 -i "~/.wallpaper_lock"
+# That pgrek/pkill is majorly ugly, but it is still better than what I had before
+exec /usr/bin/swayidle -w \
+    timeout 4 'if pgrep -x swaylock; then swaymsg "output * dpms off"; fi' \
+    resume 'swaymsg "output * dpms on"' \
+    before-sleep "$locker" \
+    lock "$locker" \
+    unlock 'pkill -u %U -x swaylock' \
+    idlehint 300
 
 ### Input configuration
 #
@@ -305,8 +313,8 @@ bindsym $mod+m mode "notification"
     bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
     bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
     bindsym --locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-    bindsym XF86ScreenSaver exec "$lock -f; sleep 4; pkill -USR1 swayidle"
-    bindsym ctrl+$mod+l exec "$lock -f; sleep 4; pkill -USR1 swayidle"
+    bindsym XF86ScreenSaver exec loginctl lock-session
+    bindsym ctrl+$mod+l exec loginctl lock-session
     bindsym XF86Sleep exec systemctl suspend
     bindsym --locked XF86AudioPrev exec playerctl previous
     bindsym --locked XF86AudioPlay exec playerctl play-pause
