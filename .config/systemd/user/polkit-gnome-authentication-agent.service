@@ -1,0 +1,7 @@
+[Unit]
+Description=Legacy GNOME polkit agent
+PartOf=graphical-session-pre.target
+
+[Service]
+Type=simple
+ExecStart=/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
