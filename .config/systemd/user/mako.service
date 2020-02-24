@@ -7,9 +7,3 @@ PartOf=graphical-session-pre.target
 Type=dbus
 BusName=org.freedesktop.Notifications
 ExecStart=/usr/bin/mako
-
-[Install]
-# I don't actually make use of the next line, as I only want to have mako in
-# sway and thus do `systemctl --user add-wants sway-session-pre.target mako`
-# instead. I just added this to make this service file more generic.
-WantedBy=graphical-session-pre.target
