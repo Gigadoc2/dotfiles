@@ -1,0 +1,21 @@
+[Unit]
+Description=Things to start before regular graphical applications in sway
+# See the part about graphical-session-pre.target
+Documentation=man:systemd.special(7)
+
+# This target is depended on by sway-session.target for now, which might change
+# to be explicitly started by sway at some point. Regardless, this target is
+# meant to be the sway-specific complement to (and pull in) sway-session.target.
+# Which means: Programs that need to be started before any other (regular)
+# graphical programs at all you should WantedBy=graphical-session-pre.target.
+# Programs that need to be started before others but _only_ when sway is running
+# (that numer ought to be close to 0) should be WantedBy= this target instead.
+
+# See comments in sway-session.target what this is for
+BindsTo=graphical-session-pre.target
+
+# Anything deemed necessary for graphical sessions per se should of course also
+# be started with this target. The order should not matter, so we do _not_ order
+# ourselves after it. Because of that, sway-session.target has to order itself
+# after both us and graphical-session-pre.target though.
+Wants=graphical-session-pre.target

@@ -1,6 +1,25 @@
 [Unit]
 Description=sway compositor session
+# See the part about graphical-session.target
 Documentation=man:systemd.special(7)
+
+# Note that for now, sway is not started as a systemd service, but by GDM. So
+# instead, sway will start this target to indicate that a sway session is now
+# started and to bring up all the autostarted programs.
+# Thus, have any program that you want to be started for graphical sessions in
+# general be WantedBy=graphical-session.target, and programs that you _only_
+# want for sway be WantedBy=sway-session.target.
+
+# A sway session is a graphical session, so we want graphical-session.target to
+# be started when we start. We also want to be started and stopped with it.
+# PartOf= would do that, but docs recommend BindsTo=. Not yet sure why, but
+# it will have a reason.
 BindsTo=graphical-session.target
-Wants=graphical-session-pre.target
-After=graphical-session-pre.target
+
+# We depend and order ourselves after sway-session-pre.target (which in turn
+# depends on graphical-session-pre.target) here, because for now we don't need
+# to synchronize anything in sway itself on this. This might change, e.g. when
+# we need to run some command in sway that depends on things set up in this
+# target.
+Wants=sway-session-pre.target
+After=sway-session-pre.target graphical-session-pre.target
