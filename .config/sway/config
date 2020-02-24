@@ -306,6 +306,7 @@ bindsym $mod+m mode "notification"
     bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
     bindsym --locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
     bindsym XF86ScreenSaver exec "$lock -f; sleep 4; pkill -USR1 swayidle"
+    bindsym ctrl+$mod+l exec "$lock -f; sleep 4; pkill -USR1 swayidle"
     bindsym XF86Sleep exec systemctl suspend
     bindsym --locked XF86AudioPrev exec playerctl previous
     bindsym --locked XF86AudioPlay exec playerctl play-pause
