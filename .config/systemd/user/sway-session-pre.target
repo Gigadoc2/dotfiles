@@ -2,6 +2,10 @@
 Description=Things to start before regular graphical applications in sway
 # See the part about graphical-session-pre.target
 Documentation=man:systemd.special(7)
+Requires=basic.target
+Before=sway-session.target
+# Stop this if no session needs us anymore
+StopWhenUnneeded=yes
 
 # This target is depended on by sway-session.target for now, which might change
 # to be explicitly started by sway at some point. Regardless, this target is
