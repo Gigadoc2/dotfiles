@@ -1,0 +1,6 @@
+#!/bin/sh
+#
+# Script to do all those things that are not solved by just changing text files
+
+echo "Loading dconf settings"
+dconf load / < "${HOME}/.config/dconf/overwrite.ini"
