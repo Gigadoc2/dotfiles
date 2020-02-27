@@ -31,10 +31,13 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term konsole
-# Your preferred application launcher
-# Note: it's recommended that you pass the final command to sway
-set $menu "rofi -show drun"
+set $term /usr/bin/konsole
+# Launch applications through wofi, in a transient systemd service.
+# Why exit status 1? Because thats what wofi exits with when I cancel launch.
+set $menu systemd-run --user --service-type=forking -q \
+    -p PartOf=graphical-session.target -p SuccessExitStatus=1 \
+    --description="sway-wofi-launched application" \
+    -- /usr/bin/wofi -S drun -i -t $term
 # Set up workspaces with names
 set $ws1 1::sh
 set $ws2 2:www
@@ -155,7 +158,9 @@ font SF Pro Display 9
 # Basics:
 #
     # start a terminal
-    bindsym $mod+Return exec $term
+    bindsym $mod+Return exec systemd-run --user --service-type=exec -q \
+        -p PartOf=graphical-session.target \
+        --description="sway-launched terminal" -- $term
 
     # kill focused window
     bindsym $mod+Shift+q kill
