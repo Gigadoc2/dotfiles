@@ -31,11 +31,15 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term /usr/bin/konsole
-# Launch applications through wofi, in a transient systemd service.
-# Why exit status 1? Because thats what wofi exits with when I cancel launch.
-set $menu systemd-run --user --service-type=forking -q \
-    -p PartOf=graphical-session.target -p SuccessExitStatus=1 \
+set $term /usr/bin/systemd-run --user --scope -q \
+    -p PartOf=graphical-session.target \
+    --unit="konsole-$(systemd-id128 new).scope" \
+    --description="sway-launched terminal" \
+    -- /usr/bin/konsole
+# Launch applications through wofi, in a transient systemd scope.
+set $menu /usr/bin/systemd-run --user --scope -q \
+    -p PartOf=graphical-session.target \
+    --unit="wofi-$(systemd-id128 new).scope" \
     --description="sway-wofi-launched application" \
     -- /usr/bin/wofi -S drun -i -t $term
 # Set up workspaces with names
@@ -159,9 +163,7 @@ font SF Pro Display 9
 # Basics:
 #
     # start a terminal
-    bindsym $mod+Return exec systemd-run --user --service-type=exec -q \
-        -p PartOf=graphical-session.target \
-        --description="sway-launched terminal" -- $term
+    bindsym $mod+Return exec $term
 
     # kill focused window
     bindsym $mod+Shift+q kill
