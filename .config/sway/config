@@ -41,7 +41,7 @@ set $menu /usr/bin/systemd-run --user --scope -q \
     -p PartOf=graphical-session.target \
     --unit="wofi-$(systemd-id128 new).scope" \
     --description="sway-wofi-launched application" \
-    -- /usr/bin/wofi -S drun -i -t $term
+    -- /usr/bin/wofi -S drun -i -t /usr/bin/konsole
 # Set up workspaces with names
 set $ws1 1::sh
 set $ws2 2:www
