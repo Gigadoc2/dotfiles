@@ -107,7 +107,7 @@ output 'NEC Corporation LCD195NX 94T19400NB' {
 set $locker swaylock -f -c 2d2d2d --inside-color 000000b3 -i "~/.wallpaper_lock"
 # That pgrek/pkill is majorly ugly, but it is still better than what I had before
 exec /usr/bin/swayidle -w \
-    timeout 4 'if pgrep -x swaylock; then swaymsg "output * dpms off"; fi' \
+    timeout 10 'if pgrep -x swaylock; then swaymsg "output * dpms off"; fi' \
     resume 'swaymsg "output * dpms on"' \
     before-sleep "$locker" \
     lock "$locker" \
