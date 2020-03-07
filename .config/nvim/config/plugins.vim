@@ -24,6 +24,7 @@ let g:indentLine_color_gui = '#504945'
 
 " vimtex settings
 let g:vimtex_compiler_latexmk = {
+    \ 'build_dir': '_latexmk',
     \ 'options' : [
     \   '-shell-escape',
     \   '-verbose',
@@ -32,3 +33,4 @@ let g:vimtex_compiler_latexmk = {
     \   '-interaction=nonstopmode',
     \ ],
     \}
+au BufLeave,VimLeavePre *.tex execute "silent !cp -v --reflink=auto _latexmk/".expand('<afile>:t:r').".pdf ."
