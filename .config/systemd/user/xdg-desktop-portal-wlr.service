@@ -1,0 +1,9 @@
+[Unit]
+Description=xdg-desktop-portal backend for wlroots compositors
+Documentation=https://github.com/emersion/xdg-desktop-portal-wlr
+PartOf=graphical-session-pre.target
+
+[Service]
+Type=dbus
+BusName=org.freedesktop.impl.portal.desktop.wlr
+ExecStart=/usr/bin/xdg-desktop-portal-wlr
