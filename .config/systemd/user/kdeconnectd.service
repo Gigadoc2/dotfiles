@@ -1,0 +1,14 @@
+[Unit]
+Description=KDE connect user daemon
+PartOf=graphical-session.target
+
+[Service]
+Type=dbus
+BusName=org.kde.kdeconnect
+ExecStart=/usr/lib/kdeconnectd
+
+# I left out the [Install] section on purpose, as this unit is not suitable for
+# just any graphical-session.target. You should enable it only for those
+# sessions where you know it works, e.g. not GNOME which has it's own kdeconnect
+# implementation. In any case, kdeconnect-cli will dbus-activate this if used
+# explicitly.

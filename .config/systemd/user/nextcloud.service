@@ -1,0 +1,13 @@
+[Unit]
+Description=Nextcloud client application
+PartOf=graphical-session.target
+# Shut down the app before the compositor is gone
+After=graphical-session.target
+
+[Service]
+Type=dbus
+BusName=com.nextcloudgmbh.Nextcloud
+ExecStart=/usr/bin/nextcloud --background
+
+[Install]
+WantedBy=graphical-session.target
