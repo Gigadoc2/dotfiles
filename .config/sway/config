@@ -33,18 +33,21 @@ set $right l
 # Your preferred terminal emulator
 set $term /usr/bin/systemd-run --user --scope -q \
     -p PartOf=graphical-session.target \
+    -p After=graphical-session.target \
     --unit="konsole-$(systemd-id128 new).scope" \
     --description="sway-launched terminal" \
     -- /usr/bin/konsole
 # Launch applications through wofi, in a transient systemd scope.
 set $menu /usr/bin/systemd-run --user --scope -q \
     -p PartOf=graphical-session.target \
+    -p After=graphical-session.target \
     --unit="wofi-app-$(systemd-id128 new).scope" \
     --description="sway-wofi-launched application" \
     -- /usr/bin/wofi -G -S drun -i -t /usr/bin/konsole
 # Same thing but for shell commands
 set $run /usr/bin/systemd-run --user --scope -q \
     -p PartOf=graphical-session.target \
+    -p After=graphical-session.target \
     --unit="wofi-sh-$(systemd-id128 new).scope" \
     --description="sway-wofi-launched command" \
     -- /usr/bin/wofi -G -S run -i
@@ -191,9 +194,12 @@ font SF Pro Display 9
     bindsym $mod+Shift+c reload
 
     # exit sway (logs you out of your Wayland session)
+    # sway-session.target and graphical-session.target are bound together, but
+    # we stop the latter here explicitly to block on it, so all applications
+    # get shut down before sway exits.
     # Note that this only unsets variables for systemd, dbus does not support
     # unsetting them. So I guess try to avoid launching stuff with dbus?
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'systemctl --user stop sway-session.target && systemctl --user unset-environment DISPLAY I3SOCK SWAYSOCK WAYLAND_DISPLAY XCURSOR_SIZE XCURSOR_THEME XDG_CURRENT_DESKTOP && swaymsg exit'
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'systemctl --user stop sway-session.target graphical-session.target && systemctl --user unset-environment DISPLAY I3SOCK SWAYSOCK WAYLAND_DISPLAY XCURSOR_SIZE XCURSOR_THEME XDG_CURRENT_DESKTOP && swaymsg exit'
 #
 # Moving around:
 #
