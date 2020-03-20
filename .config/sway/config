@@ -332,8 +332,8 @@ bindsym $mod+m mode "notification"
 #
 # Custom launch shortcuts
 #
-    bindsym --locked XF86MonBrightnessDown exec blight set -- -5%
-    bindsym --locked XF86MonBrightnessUp exec blight set -- +5%
+    bindsym --locked XF86MonBrightnessDown exec blight set -/14
+    bindsym --locked XF86MonBrightnessUp exec blight set +/14
     bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
     bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
     bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
