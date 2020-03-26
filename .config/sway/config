@@ -199,7 +199,8 @@ font SF Pro Display 9
     # get shut down before sway exits.
     # Note that this only unsets variables for systemd, dbus does not support
     # unsetting them. So I guess try to avoid launching stuff with dbus?
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'systemctl --user stop sway-session.target graphical-session.target && systemctl --user unset-environment DISPLAY I3SOCK SWAYSOCK WAYLAND_DISPLAY XCURSOR_SIZE XCURSOR_THEME XDG_CURRENT_DESKTOP && swaymsg exit'
+    #bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'systemctl --user stop sway-session.target graphical-session.target && systemctl --user unset-environment DISPLAY I3SOCK SWAYSOCK WAYLAND_DISPLAY XCURSOR_SIZE XCURSOR_THEME XDG_CURRENT_DESKTOP && swaymsg exit'
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'shutdown' 'stop_apps_and poweroff' -B 'reboot' 'stop_apps_and reboot' -B 'logout' 'stop_apps_and swaymsg exit'
 #
 # Moving around:
 #

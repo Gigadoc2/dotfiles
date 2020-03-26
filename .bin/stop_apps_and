@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# Small wrapper script that stops the graphical session cleanly, waiting for all
+# apps to exit and removing the environment variables (keep that in sync with
+# what is exported in the sway config!), only then executing the command given.
+# Use it with commands like "shutdown", "reboot", "swaymsg exit" or whatever
+# else terminates the graphical session in some way.
+
+systemctl --user stop sway-session.target graphical-session.target
+systemctl --user unset-environment DISPLAY I3SOCK SWAYSOCK WAYLAND_DISPLAY XCURSOR_SIZE XCURSOR_THEME XDG_CURRENT_DESKTOP
+$@
