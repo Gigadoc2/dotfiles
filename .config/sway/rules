@@ -26,3 +26,4 @@ for_window [app_id="evolution"] floating enable
 for_window [app_id="evolution" title=" Evolution$"] floating disable
 for_window [title="^Android Emulator -"] floating enable
 for_window [title="^Emulator$"] floating enable
+for_window [title="Firefox - Weitergabe-Indikator"] floating enable
