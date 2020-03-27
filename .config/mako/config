@@ -21,3 +21,6 @@ width=350
 height=150
 default-timeout=5000
 text-color=#b8bb26
+
+[app-name="Mumble"]
+default-timeout=3000
