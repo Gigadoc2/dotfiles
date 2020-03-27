@@ -347,8 +347,6 @@ bindsym $mod+m mode "notification"
     bindsym --locked XF86AudioNext exec playerctl next
     bindsym Print exec grim -g "$(slurp)" /tmp/screenshot.png
     bindsym Shift+Print exec grim /tmp/screenshot.png
-    bindsym --whole-window BTN_SIDE exec busctl --user call net.sourceforge.mumble.mumble / net.sourceforge.mumble.Mumble startTalking
-    bindsym --whole-window --release BTN_SIDE exec busctl --user call net.sourceforge.mumble.mumble / net.sourceforge.mumble.Mumble stopTalking
 
 #
 # Status Bar:
