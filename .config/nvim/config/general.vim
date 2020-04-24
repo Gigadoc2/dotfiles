@@ -35,8 +35,10 @@ set ignorecase
 set smartcase
 
 """ identation settings
-set expandtab " pressing tab inserts spaces
-set shiftwidth=4 " indent with tabs equivalent to 4 spaces
+set smarttab " use tabs AND spaces, to piss people off
+set noexpandtab
+set tabstop=4
+set shiftwidth=4 " ident with tabs equivalent to 4 spaces
 set copyindent
 set preserveindent " but try to retain compatibility
 set list " visually discern tabs from spaces
