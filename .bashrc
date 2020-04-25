@@ -9,7 +9,10 @@
 # http://cnswww.cns.cwru.edu/~chet/bash/FAQ (E11)
 shopt -s checkwinsize
 
-# Enable history appending instead of overwriting.
+# Append history instead of overwrite, remove duplicates and have large limits
+export HISTCONTROL=ignoredups:erasedups
+export HISTSIZE=9000
+export HISTFILESIZE=$HISTSIZE
 shopt -s histappend
 
 # Set regular bash prompt(s)
