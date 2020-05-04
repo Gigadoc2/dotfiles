@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# Copy the current terminals terminfo to a remote host
+
+infocmp -L | ssh $@ "mkdir -p .terminfo && cat > /tmp/ti && tic -o ~/.terminfo /tmp/ti"
