@@ -1,3 +1,0 @@
-[submodule "gruvbox-contrib"]
-	path = .local/share/gruvbox-contrib
-	url = https://github.com/morhetz/gruvbox-contrib.git
