@@ -1,4 +1,0 @@
-[D-BUS Service]
-Name=org.freedesktop.impl.portal.desktop.wlr
-Exec=/usr/bin/false
-SystemdService=xdg-desktop-portal-wlr.service
