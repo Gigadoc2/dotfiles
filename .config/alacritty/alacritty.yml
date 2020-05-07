@@ -46,6 +46,9 @@ colors:
     cyan:    '#8ec07c'
     white:   '#ebdbb2'
 
+# This seems to be the standard behaviour, some software (dstat) expects it
+draw_bold_text_with_bright_colors: true
+
 mouse:
   # Hide the mouse cursor when typing
   hide_when_typing: true
