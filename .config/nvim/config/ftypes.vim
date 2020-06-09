@@ -6,3 +6,5 @@ autocmd filetype yaml setlocal sw=2
 " latex is way prettier with 2 spaces
 autocmd filetype tex setlocal ts=2
 autocmd filetype tex setlocal sw=2
+" wrap words at the boundary
+autocmd filetype tex setlocal textwidth=80
