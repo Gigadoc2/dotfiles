@@ -354,8 +354,8 @@ bindsym $mod+m mode "notification"
     bindsym --locked XF86AudioPrev exec playerctl previous
     bindsym --locked XF86AudioPlay exec playerctl play-pause
     bindsym --locked XF86AudioNext exec playerctl next
-    bindsym Print exec grim -g "$(slurp)" /tmp/screenshot.png
-    bindsym Shift+Print exec grim /tmp/screenshot.png
+    bindsym Print exec grim -g "$(slurp)" - | tee /tmp/screenshot.png | wl-copy
+    bindsym Shift+Print exec grim | tee /tmp/screenshot.png | wl-copy
 
 #
 # Status Bar:
