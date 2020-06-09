@@ -1,0 +1,10 @@
+[Unit]
+Description=Emergency termination of sway
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/swaymsg -q exit
+
+[Install]
+# This is not a standardised name, I just use it in case I ever have two systems
+Alias=emergency-exit.service

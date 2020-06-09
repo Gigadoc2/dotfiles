@@ -107,14 +107,23 @@ output 'NEC Corporation LCD195NX 94T19400NB' {
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
-set $locker swaylock -f -c 2d2d2d --inside-color 000000b3 -i "~/.wallpaper_lock"
-# That pgrek/pkill is majorly ugly, but it is still better than what I had before
+# Start the screenlocker as an user service, so that it can be tracked for
+# _both_ startup completion and (possibly unwanted) termination. The startup
+# tracking is needed so that the system does not go to sleep before the lock
+# screen is fully set up (systemctl blocks until swaylock has forked), the
+# termination tracking is needed to emergency terminate the session in case the
+# screenlocker is somehow crashed. This is not perfect security, there will be a
+# short timeslot in which the session is unprotected before it gets shut down.
+# The only place to properly secure the session against forced screenlock
+# termination would be the compositor itself, but unfortunately sway devs are
+# unwilling to incorporate something like this. Just like with xscreensaver,
+# they are sure that their own screenlocker will never crash unexpectedly.
 exec /usr/bin/swayidle -w \
     timeout 10 'if pgrep -x swaylock; then swaymsg "output * dpms off"; fi' \
     resume 'swaymsg "output * dpms on"' \
-    before-sleep "$locker" \
-    lock "$locker" \
-    unlock 'pkill -u %U -x swaylock' \
+    before-sleep "systemctl --user start screenlock.service" \
+    lock "systemctl --user start screenlock.service" \
+    unlock 'systemctl --user stop screenlock.service' \
     idlehint 300
 
 ### Input configuration

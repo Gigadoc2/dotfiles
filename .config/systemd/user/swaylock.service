@@ -1,0 +1,16 @@
+[Unit]
+Description=Screen locker for wayland
+Documentation=man:swaylock(1)
+PartOf=graphical-session-pre.target
+
+# End the session when the locker has somehow been terminated uncleanly
+OnFailure=emergency-exit.service
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/swaylock -f
+
+[Install]
+# This is not a standardised name, I just use it in case I ever have two systems
+# with different screenlockers
+Alias=screenlock.service
