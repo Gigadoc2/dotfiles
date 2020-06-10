@@ -174,7 +174,7 @@ client.focused_inactive "#484848" "#2d2d2d" "#929292" "#2d2d2d" "#2d2d2d"
 client.unfocused        "#484848" "#2d2d2d" "#929292" "#2d2d2d" "#2d2d2d"
 client.urgent           "#98971a" "#98971a" "#1d2021" "#98971a" "#98971a"
 # Fonts
-font SF Pro Display 9
+font Cantarell 9
 
 ### Key bindings
 #
