@@ -55,3 +55,7 @@ mouse:
   url:
     # Don't open links when I try to select them
     modifiers: Control
+
+shell:
+  program: /usr/bin/bash
+  args: [--login]
