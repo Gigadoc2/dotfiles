@@ -4,3 +4,6 @@
 
 echo "Loading dconf settings"
 dconf load / < "${HOME}/.config/dconf/overwrite.ini"
+
+echo "Linking host-specific files"
+ln -s "config.$(hostname)" "${HOME}/.config/mako/config" || true
