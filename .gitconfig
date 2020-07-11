@@ -1,7 +1,7 @@
 [user]
 	name = Gigadoc2
 	email = gigadoc2@revreso.de
-	signingkey = 422DE3FA
+	signingKey = 51A3C2E467060CC24529A15A4015B7FE2A80D95B
 [color]
 	ui = auto
 [commit]
