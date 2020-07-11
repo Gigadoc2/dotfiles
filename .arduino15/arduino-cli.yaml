@@ -1,0 +1,15 @@
+board_manager:
+  additional_urls: []
+daemon:
+  port: "50051"
+directories:
+  data: /home/gigadoc2/.local/share/arduino/
+  downloads: /home/gigadoc2/.local/share/arduino/
+  user: /home/gigadoc2/.local/share/arduino/
+logging:
+  file: ""
+  format: text
+  level: info
+telemetry:
+  addr: :9090
+  enabled: false
