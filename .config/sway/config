@@ -332,13 +332,7 @@ bindsym $mod+r mode "resize"
 #
     # Close last notification
     bindsym $mod+n exec makoctl dismiss
-mode "notification" {
-    bindsym return makoctl invoke
-
-    # return to default mode
-    bindsym Escape mode "default"
-}
-bindsym $mod+m mode "notification"
+    bindsym $mod+m exec makoctl menu wofi -d -p 'Choose Action: '
 #
 # Custom launch shortcuts
 #
