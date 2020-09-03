@@ -2,6 +2,7 @@
 font = SF Mono 10
 hyperlinks = true
 mouse_autohide = true
+scrollback_lines = 50000
 search_wrap = false
 
 [colors]
