@@ -11,3 +11,9 @@ autocmd filetype tex setlocal textwidth=80
 
 " also wrap words for markdown
 autocmd filetype markdown setlocal textwidth=80
+
+" use format=flowed for email
+autocmd filetype mail setlocal textwidth=72
+autocmd filetype mail setlocal cc=72
+autocmd filetype mail setlocal fo=awq
+autocmd filetype mail setlocal comments+=nb:>
