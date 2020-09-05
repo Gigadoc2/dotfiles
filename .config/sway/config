@@ -176,6 +176,10 @@ client.urgent           "#98971a" "#98971a" "#1d2021" "#98971a" "#98971a"
 # Fonts
 font Cantarell 9
 
+### Miscellaneous behaviour tweaks
+# focus follows mouse, but mouse also focus
+mouse_warping container
+
 ### Key bindings
 #
 # Basics:
