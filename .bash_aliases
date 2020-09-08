@@ -9,7 +9,7 @@ alias du='du -h'
 alias mkdir='mkdir -pv'
 alias dmesg='dmesg -e'
 # optimized copying
-alias cp='cp --reflink=auto'
+alias cp='cp -i --reflink=auto'
 
 ## Replacements
 alias vim='$EDITOR'
