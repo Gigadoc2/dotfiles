@@ -148,6 +148,12 @@ input "2689:517:CHESEN_PS2_to_USB_Converter" {
     xkb_model "pc105"
     xkb_options "caps:hyper,altwin:swap_lalt_lwin,shift:both_capslock_cancel"
 }
+input "1133:49702:G15_Gaming_Keyboard" {
+    xkb_layout de
+    xkb_model "pc105"
+    xkb_options "caps:hyper,altwin:swap_lalt_lwin,shift:both_capslock_cancel"
+    xkb_numlock enabled
+}
 input "2:10:TPPS/2_IBM_TrackPoint" {
     pointer_accel -0.5
 }
