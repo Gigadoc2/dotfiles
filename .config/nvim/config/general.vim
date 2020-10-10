@@ -51,3 +51,6 @@ set wildmode=longest:full
 
 " ignore these file endings when completing
 set wildignore=*.o,*.a,*.la,*.lo,*.swp,.svn,.git,*.pyc,*.pyo
+
+""" command interaction
+set shellredir=> " do not capture stderr
