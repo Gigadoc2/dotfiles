@@ -119,8 +119,6 @@ output 'NEC Corporation LCD195NX 94T19400NB' {
 # unwilling to incorporate something like this. Just like with xscreensaver,
 # they are sure that their own screenlocker will never crash unexpectedly.
 exec /usr/bin/swayidle -w \
-    timeout 10 'if pgrep -x swaylock; then swaymsg "output * dpms off"; fi' \
-    resume 'swaymsg "output * dpms on"' \
     before-sleep "systemctl --user start screenlock.service" \
     lock "systemctl --user start screenlock.service" \
     unlock 'systemctl --user stop screenlock.service' \
