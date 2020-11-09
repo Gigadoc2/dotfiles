@@ -36,14 +36,14 @@ set $term /usr/bin/systemd-run --user --scope -q \
     -p After=graphical-session.target \
     --unit="terminal-$(systemd-id128 new).scope" \
     --description="sway-launched terminal" \
-    -- /usr/bin/alacritty
+    -- /usr/bin/termite
 # Launch applications through wofi, in a transient systemd scope.
 set $menu /usr/bin/systemd-run --user --scope -q \
     -p PartOf=graphical-session.target \
     -p After=graphical-session.target \
     --unit="wofi-app-$(systemd-id128 new).scope" \
     --description="sway-wofi-launched application" \
-    -- /usr/bin/wofi -G -S drun -i -t /usr/bin/alacritty
+    -- /usr/bin/wofi -G -S drun -i -t /usr/bin/termite
 # Same thing but for shell commands
 set $run /usr/bin/systemd-run --user --scope -q \
     -p PartOf=graphical-session.target \
