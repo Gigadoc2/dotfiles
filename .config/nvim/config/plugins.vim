@@ -20,6 +20,7 @@ call plug#end()
 let g:gruvbox_italic = 1 " enable italcs, we can handle it
 
 " vimtex settings
+let g:tex_flavor = 'latex' " only used as a fallback if autodetection fails
 let g:vimtex_compiler_latexmk = {
     \ 'build_dir': '_latexmk',
     \ 'options' : [
