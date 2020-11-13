@@ -6,6 +6,7 @@ PartOf=graphical-session.target
 Type=dbus
 BusName=org.kde.kdeconnect
 ExecStart=/usr/lib/kdeconnectd
+Slice=background.slice
 
 # I left out the [Install] section on purpose, as this unit is not suitable for
 # just any graphical-session.target. You should enable it only for those

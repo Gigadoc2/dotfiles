@@ -7,3 +7,4 @@ PartOf=graphical-session-pre.target
 Type=dbus
 BusName=org.freedesktop.Notifications
 ExecStart=/usr/bin/mako
+Slice=session.slice

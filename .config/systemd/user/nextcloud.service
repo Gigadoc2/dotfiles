@@ -8,6 +8,7 @@ After=graphical-session.target
 Type=dbus
 BusName=com.nextcloudgmbh.Nextcloud
 ExecStart=/usr/bin/nextcloud --background
+Slice=background.slice
 
 [Install]
 WantedBy=graphical-session.target

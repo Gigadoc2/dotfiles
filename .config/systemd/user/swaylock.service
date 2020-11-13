@@ -9,6 +9,7 @@ OnFailure=emergency-exit.service
 [Service]
 Type=forking
 ExecStart=/usr/bin/swaylock -f
+Slice=session.slice
 
 [Install]
 # This is not a standardised name, I just use it in case I ever have two systems
