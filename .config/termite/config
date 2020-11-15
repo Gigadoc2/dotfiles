@@ -14,35 +14,68 @@ foreground = #ebdbb2
 foreground_bold = #ebdbb2
 
 # dark0 + gray
-color0 = #282828
-color8 = #928374
+color0   = #282828
+color235 = #282828
+color8   = #928374
+color245 = #928374
 
 # neutral_red + bright_red
-color1 = #cc241d
-color9 = #fb4934
+color1   = #cc241d
+color124 = #cc241d
+color9   = #fb4934
+color167 = #fb4934
 
 # neutral_green + bright_green
-color2 = #98971a
-color10 = #b8bb26
+color2   = #98971a
+color106 = #98971a
+color10  = #b8bb26
+color142 = #b8bb26
 
 # neutral_yellow + bright_yellow
-color3 = #d79921
-color11 = #fabd2f
+color3   = #d79921
+color172 = #d79921
+color11  = #fabd2f
+color214 = #fabd2f
 
 # neutral_blue + bright_blue
-color4 = #458588
-color12 = #83a598
+color4   = #458588
+color66  = #458588
+color12  = #83a598
+color109 = #83a598
 
 # neutral_purple + bright_purple
-color5 = #b16286
-color13 = #d3869b
+color5   = #b16286
+color132 = #b16286
+color13  = #d3869b
+color175 = #d3869b
 
 # neutral_aqua + faded_aqua
-color6 = #689d6a
-color14 = #8ec07c
+color6   = #689d6a
+color72  = #689d6a
+color14  = #8ec07c
+color108 = #8ec07c
 
 # light4 + light1
-color7 = #a89984
-color15 = #ebdbb2
+color7   = #a89984
+color246 = #a89984
+color15  = #ebdbb2
+color223 = #ebdbb2
+
+# background variations
+color234 = #1d2021
+color246 = #32302f
+color237 = #3c3836
+color239 = #504945
+color241 = #665c54
+color243 = #7c6f64
+
+# foreground variations
+color246 = #a89984
+color248 = #bdae93
+color250 = #d5c4a1
+
+# orange!
+color116 = #d65d0e
+color208 = #fe8019
 
 # vim: ft=dosini
