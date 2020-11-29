@@ -1,0 +1,8 @@
+[Unit]
+Description=Mailbox synchronization service
+
+[Service]
+Type=oneshot
+ExecCondition=/bin/sh -c 'if systemctl --user -q is-active screenlock.service; then echo "Screenlocker is active, can\'t sync mail."; exit 75; fi'
+ExecStart=/usr/bin/mbsync -Va
+ExecStart=/usr/bin/notmuch new

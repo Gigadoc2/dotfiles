@@ -1,0 +1,3 @@
+text/html; w3m -I %{charset} -T text/html; copiousoutput;
+application/*; xdg-open '%s'; test=test -n "$WAYLAND_DISPLAY"
+image/*; xdg-open '%s'; test=test -n "$WAYLAND_DISPLAY"

@@ -1,0 +1,135 @@
+set mbox_type=Maildir
+set folder=~/.mail/Revreso
+set header_cache=~/.cache/mutt
+set postponed=+/Drafts
+set record=+/Sent
+set trash=+/Trash
+set sendmail="msmtp --read-envelope-from"
+
+set nm_default_url="notmuch:///home/gigadoc2/.mail"
+set nm_query_type=threads
+
+virtual-mailboxes "Inbox" "notmuch://?query=folder:Revreso/INBOX"
+virtual-mailboxes "Bestellungen" "notmuch://?query=folder:Revreso/INBOX/Bestellungen"
+virtual-mailboxes "Newsletter" "notmuch://?query=folder:Revreso/INBOX/Newsletter"
+virtual-mailboxes "Wohnen" "notmuch://?query=folder:Revreso/INBOX/Wohnen"
+virtual-mailboxes "root" "notmuch://?query=folder:Revreso/INBOX/root"
+virtual-mailboxes "Lists" "notmuch://?query=folder:Revreso/Lists"
+virtual-mailboxes "Chaos" "notmuch://?query=folder:Revreso/Lists/Chaos"
+virtual-mailboxes "C3PB" "notmuch://?query=folder:Revreso/Lists/Chaos/C3PB"
+virtual-mailboxes "Oqlt" "notmuch://?query=folder:Revreso/Lists/Chaos/Oqlt"
+virtual-mailboxes "Piraten" "notmuch://?query=folder:Revreso/Lists/Piraten"
+virtual-mailboxes "Projekte" "notmuch://?query=folder:Revreso/Lists/Projekte"
+virtual-mailboxes "diaspora" "notmuch://?query=folder:Revreso/Lists/Projekte/diaspora"
+virtual-mailboxes "dn42" "notmuch://?query=folder:Revreso/Lists/Projekte/dn42"
+virtual-mailboxes "ffho" "notmuch://?query=folder:Revreso/Lists/Projekte/ffho"
+virtual-mailboxes "OSM" "notmuch://?query=folder:Revreso/Lists/Projekte/OSM"
+virtual-mailboxes "prosody" "notmuch://?query=folder:Revreso/Lists/Projekte/prosody"
+virtual-mailboxes "systemd" "notmuch://?query=folder:Revreso/Lists/Projekte/systemd"
+virtual-mailboxes "Archive" "notmuch://?query=folder:Revreso/Archive"
+virtual-mailboxes "Sent" "notmuch://?query=folder:Revreso/Sent&type=messages"
+virtual-mailboxes "Drafts" "notmuch://?query=folder:Revreso/Drafts"
+virtual-mailboxes "Templates" "notmuch://?query=folder:Revreso/Templates&type=messages"
+virtual-mailboxes "Spam" "notmuch://?query=folder:Revreso/Spam&type=messages"
+virtual-mailboxes "Trash" "notmuch://?query=folder:Revreso/Trash&type=messages"
+set spoolfile=Inbox
+
+folder-hook . "bind pager,index d delete-message"
+folder-hook Trash "bind pager,index d purge-message"
+
+source /home/gigadoc2/.config/neomutt/addresses
+
+set sort=threads
+set sort_aux=reverse-last-date-received
+set nomark_old
+set status_format="-%r- %D%> [Shown: %M/%m Size: %l] (%P)"
+
+unset confirmappend
+unset wait_key
+
+set sidebar_visible
+set mail_check_stats
+set sidebar_short_path
+set sidebar_folder_indent
+set sidebar_component_depth=1
+set sidebar_indent_string=" "
+set sidebar_format="%D%* %?F? [%F]?%?N? %N?"
+set sidebar_width=22
+
+set index_format="%4C %Z %{%b %d} %-17.17F %s"
+set pager_index_lines=10
+set pager_context=3
+set pager_stop
+set assumed_charset="utf-8"
+set crypt_verify_sig
+set mailcap_path="~/.config/neomutt/mailcap"
+set implicit_autoview
+alternative_order text/plain text/html
+
+set edit_headers
+set text_flowed
+set send_charset="us-ascii:utf-8"
+set reverse_name
+
+set crypt_autosign
+set crypt_replysign
+set crypt_replyencrypt
+set crypt_replysignencrypted
+set crypt_opportunistic_encrypt
+set crypt_protected_headers_write
+set postpone_encrypt
+set pgp_sign_as=0x53025858931FA958
+set postpone_encrypt_as=0x0CF3370E27897765
+my_hdr X-PGP-Key: https://revreso.de/.well-known/openpgpkey/hu/so5kitix1c89hopfe4afsmd7z89b7m9n
+
+unignore Authentication-Results Return-Path: X-Mailer: X-PGP X-GPG Folder
+unhdr_order *
+hdr_order Date: Return-Path: Authentication-Results From: To: Subject: X-Mailer: X-PGP X-GPG Folder
+
+macro index,pager a "<save-message>=Archive<enter>"
+macro index,pager O "<shell-escape>systemctl --user start --no-block mailsync.service<enter>" "Sync mail right now"
+
+color attachment       color12  color0
+color bold        bold color229 color0
+color error       bold color0   color9
+color hdrdefault       color8   color0
+color indicator        color15  color239
+color markers          color8   color0
+color normal           color15  color0
+color quoted           color14  color0
+color quoted1          color13  color0
+color quoted2          color14  color0
+color quoted3          color13  color0
+color quoted4          color14  color0
+color quoted5          color13  color0
+color quoted6          color14  color0
+color quoted7          color13  color0
+color quoted8          color14  color0
+color quoted9          color13  color0
+color search           color0   color208
+color signature        color14  color0
+color status           color0   color250
+color tilde            color243 color0
+color tree             color246 color0
+color underline        color15  color239
+
+color sidebar_new color12 color0
+color sidebar_unread color12 color0
+
+color index      color11  color0   ~G
+color index      color13  color0   ~Q
+color index bold color12  color0   ~N
+color index bold color12  color0   ~O
+color index      color14  color0   ~P
+color index      color10  color0   ~=
+color index bold color9   color0   ~F
+color index      color0   color15  ~T
+color index      color0   color1   ~D
+
+color header color11 color0 "^(To:|From:)"
+color header color10 color0 "^Subject:"
+color header color14 color0 "^Date:"
+
+color body color12  color0 "[a-z]{3,256}://[-a-zA-Z0-9@:%._\\+~#=/?&,]+"
+color body color208 color0 "(mailto:)?[-a-z_0-9.%$]+@[-a-z_0-9.]+\\.[-a-z][-a-z]+"
+color body bold color15 color0 "\\*[- A-Za-z]+\\*"

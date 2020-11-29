@@ -1,0 +1,25 @@
+# Global configuration section
+#   Values here are used as defaults for any following Channel section that
+#   doesn't specify them.
+Expunge None
+Create Both
+Remove Both
+CopyArrivalDate yes
+SyncState *
+
+MaildirStore revreso-local
+Path ~/.mail/Revreso/
+Inbox ~/.mail/Revreso/INBOX
+SubFolders Verbatim
+
+IMAPStore revreso-remote
+Host mail.revreso.de
+User gigadoc2@revreso.de
+PassCmd "pass show Revreso/mail.revreso.de/Complex | head -n1"
+SSLType IMAPS
+SSLVersions TLSv1.2
+
+Channel revreso
+Master :revreso-remote:
+Slave :revreso-local:
+Patterns *
