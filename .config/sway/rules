@@ -28,3 +28,4 @@ for_window [title="^Android Emulator -"] floating enable
 for_window [title="^Emulator$"] floating enable
 for_window [title="Firefox - Weitergabe-Indikator"] floating enable
 for_window [app_id="openmw-launcher"] floating enable
+for_window [app_id="^qemu-system*"] floating enable
