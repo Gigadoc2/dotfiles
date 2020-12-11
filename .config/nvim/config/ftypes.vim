@@ -15,5 +15,5 @@ autocmd filetype markdown setlocal textwidth=80
 " use format=flowed for email
 autocmd filetype mail setlocal textwidth=72
 autocmd filetype mail setlocal cc=72
-autocmd filetype mail setlocal fo=awq
+autocmd filetype mail setlocal fo+=qwa
 autocmd filetype mail setlocal comments+=nb:>
