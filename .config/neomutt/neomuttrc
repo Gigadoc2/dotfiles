@@ -8,6 +8,7 @@ set sendmail="msmtp --read-envelope-from"
 
 set nm_default_url="notmuch:///home/gigadoc2/.mail"
 set nm_query_type=threads
+set nm_record=yes
 
 virtual-mailboxes "Inbox" "notmuch://?query=folder:Revreso/INBOX"
 virtual-mailboxes "Bestellungen" "notmuch://?query=folder:Revreso/INBOX/Bestellungen"
