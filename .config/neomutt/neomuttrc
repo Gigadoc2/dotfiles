@@ -87,8 +87,9 @@ unignore Authentication-Results Return-Path: X-Mailer: X-PGP X-GPG Folder
 unhdr_order *
 hdr_order Date: Return-Path: Authentication-Results From: To: Subject: X-Mailer: X-PGP X-GPG Folder
 
+bind  index,pager <Tab> sync-mailbox
 macro index,pager a "<save-message>=Archive<enter>"
-macro index,pager O "<shell-escape>systemctl --user start --no-block mailsync.service<enter>" "Sync mail right now"
+macro index,pager G "<shell-escape>systemctl --user start --no-block mailsync.service<enter>" "Sync mail right now"
 
 color attachment       color12  color0
 color bold        bold color229 color0
