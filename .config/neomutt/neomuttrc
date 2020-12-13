@@ -71,6 +71,7 @@ set edit_headers
 set text_flowed
 set send_charset="us-ascii:utf-8"
 set reverse_name
+unset signature
 
 set crypt_autosign
 set crypt_replysign
