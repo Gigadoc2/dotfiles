@@ -9,8 +9,9 @@
 # http://cnswww.cns.cwru.edu/~chet/bash/FAQ (E11)
 shopt -s checkwinsize
 
-# Append history instead of overwrite, remove duplicates and have large limits
-export HISTCONTROL=ignoredups:erasedups
+# Append history instead of overwrite, remove duplicates and allow hiding
+# commands, have large limits
+export HISTCONTROL=ignoreboth
 export HISTSIZE=9000
 export HISTFILESIZE=$HISTSIZE
 shopt -s histappend
