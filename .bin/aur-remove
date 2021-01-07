@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+if [[ -z "$1" ]]; then
+	echo "Usage: aur remove <package>"
+	exit 1
+fi
+
+repopath="$(aur repo --path)"
+
+repo-remove "$repopath" "$1"
+rm -i "$(dirname "$repopath")"/${1}-*.pkg.tar.*
+rm -rf "$HOME/.cache/aurutils/sync/$1" && echo "removed $HOME/.cache/aurutils/sync/$1"
