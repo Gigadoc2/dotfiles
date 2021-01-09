@@ -72,6 +72,8 @@ set text_flowed
 set send_charset="us-ascii:utf-8"
 set reverse_name
 unset signature
+set mime_forward
+set forward_format="Fwd: %s"
 
 set crypt_autosign
 set crypt_replysign
