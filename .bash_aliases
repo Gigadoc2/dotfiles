@@ -24,7 +24,7 @@ alias sudo='sudo ' # have aliases used with sudo as well
 alias svim='sudoedit'
 
 ## ls
-alias ls='ls -hF --color=auto'
+alias ls='ls -hF --color=auto --hyperlink=auto'
 alias lr='ls -R'                    # recursive ls
 alias ll='ls -l'
 alias la='ll -A'
