@@ -10,6 +10,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'saltstack/salt-vim'
 Plug 'cometsong/ferm.vim'
 Plug 'PProvost/vim-ps1'
+Plug 'nfnty/vim-nftables'
 
 " latex tools
 Plug 'lervag/vimtex'
