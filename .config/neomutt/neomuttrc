@@ -82,8 +82,7 @@ set crypt_replysignencrypted
 set crypt_opportunistic_encrypt
 set crypt_protected_headers_write
 set postpone_encrypt
-set pgp_sign_as=0x53025858931FA958
-set postpone_encrypt_as=0x0CF3370E27897765
+set pgp_default_key=0x4015B7FE2A80D95B
 set pgp_self_encrypt
 my_hdr X-PGP-Key: https://revreso.de/.well-known/openpgpkey/hu/so5kitix1c89hopfe4afsmd7z89b7m9n
 
