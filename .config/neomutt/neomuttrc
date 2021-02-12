@@ -84,6 +84,7 @@ set crypt_protected_headers_write
 set postpone_encrypt
 set pgp_default_key=0x4015B7FE2A80D95B
 set pgp_self_encrypt
+unset crypt_autosmime # I don't have any certificates for that
 my_hdr X-PGP-Key: https://revreso.de/.well-known/openpgpkey/hu/so5kitix1c89hopfe4afsmd7z89b7m9n
 
 unignore Authentication-Results Return-Path: X-Mailer: X-PGP X-GPG Folder
