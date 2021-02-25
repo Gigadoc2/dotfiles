@@ -74,6 +74,7 @@ set reverse_name
 unset signature
 set mime_forward
 set forward_format="Fwd: %s"
+set fast_reply
 
 set crypt_autosign
 set crypt_replysign
