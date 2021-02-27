@@ -78,7 +78,7 @@ set $ws10 10
 output * background "~/.local/share/wallpaper/current" fill
 
 # Desktop
-output 'Goldstar Company Ltd IPS235 Serial Number' {
+output 'Goldstar Company Ltd IPS235 110INHZ6R257' {
     position 1280 0
     subpixel rgb
     background "~/.wallpaper_center.png" center
