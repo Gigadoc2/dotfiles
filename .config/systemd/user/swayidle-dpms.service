@@ -1,0 +1,13 @@
+[Unit]
+Description=Shut down the screens when idle
+Documentation=man:swayidle(1)
+StopWhenUnneeded=true
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/swayidle \
+	timeout 15 'swaymsg "output * dpms off"' \
+	resume 'swaymsg "output * dpms on"'
+Slice=session.slice
+
+# Not meant to be used directly, but as a dependency of swaylock.service
