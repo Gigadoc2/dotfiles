@@ -1,0 +1,3 @@
+#!/bin/sh
+bwrap --ro-bind /usr /usr --symlink usr/lib64 /lib64 --proc /proc --unshare-all \
+	w3m -I %{charset} -T text/html -o display_image=false -o display_link=true
