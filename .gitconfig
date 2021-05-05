@@ -17,3 +17,5 @@
 	helper = /usr/lib/git-core/git-credential-libsecret
 [pull]
 	ff = only
+[init]
+	defaultBranch = main
