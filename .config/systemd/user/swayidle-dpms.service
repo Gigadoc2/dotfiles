@@ -6,7 +6,7 @@ StopWhenUnneeded=true
 [Service]
 Type=simple
 ExecStart=/usr/bin/swayidle \
-	timeout 15 'swaymsg "output * dpms off"' \
+	timeout 300 'swaymsg "output * dpms off"' \
 	resume 'swaymsg "output * dpms on"'
 Slice=session.slice
 
