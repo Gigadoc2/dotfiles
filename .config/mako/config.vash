@@ -1,6 +1,8 @@
 layer=overlay
 output=LVDS-1
 
+invisible=0
+
 font=SF Pro Display 12
 
 background-color=#2d2d2df2

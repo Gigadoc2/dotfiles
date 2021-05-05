@@ -1,0 +1,4 @@
+#!/bin/sh
+
+sed -i --follow-symlinks '/invisible=1/c\invisible=0' ~/.config/mako/config
+makoctl reload
