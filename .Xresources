@@ -1,11 +1,1 @@
-URxvt.urlLauncher: /usr/bin/xdg-open
-URxvt.matcher.button: 1
-URxvt.perl-ext-common: default,matcher,vtwheel
-
-URxvt.scrollBar: false
-URxvt.saveLines: 2048
-
-! Include colors
-#include ".local/share/gruvbox-contrib/xresources/gruvbox-dark.xresources"
-
 Xft.dpi: 96
