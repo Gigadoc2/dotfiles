@@ -78,22 +78,25 @@ set $ws10 10
 output * background "~/.local/share/wallpaper/current" fill
 
 # Desktop
-output 'Goldstar Company Ltd IPS235 110INHZ6R257' {
-    position 1280 0
+output 'Goldstar Company Ltd  0x00009FBF' {
+    disable
+    position 0 56
+    mode 1280x1024@60Hz
     subpixel rgb
-    background "~/.wallpaper_center.png" center
 }
 
-output 'Goldstar Company Ltd  0x00009FBF' {
-    position 0 56
-    subpixel rgb
-    background "~/.wallpaper_left.png" center
+output 'Acer Technologies XV273K 0x0000F387' {
+    scale 2
+    position 1280 0
+    mode 3840x2160@60Hz
+    subpixel none
+    adaptive_sync on
 }
 
 output 'NEC Corporation LCD195NX 94T19400NB' {
     position 3200 56
+    mode 1280x1024@75Hz
     subpixel rgb
-    background "~/.wallpaper_right.png" center
 }
 
 ### Idle configuration
