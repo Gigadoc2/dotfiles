@@ -1,5 +1,5 @@
 [options]
-font = SF Mono 10
+font = SF Mono 9
 hyperlinks = true
 mouse_autohide = true
 scrollback_lines = 50000
