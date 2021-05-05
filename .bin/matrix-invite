@@ -1,0 +1,33 @@
+#!/bin/sh
+set -euo pipefail
+IFS=$'\n\t'
+
+mreg_location="https://mxreg.revreso.de"
+admin_api_shared_secret="$(pass Revreso/mxreg.revreso.de | head -n1)"
+
+if ! command -v jq &> /dev/null
+then
+  echo "jq needs to be installed"
+  exit
+fi
+
+timeOutput=7
+echo "Expire in \"$timeOutput\" days or enter a new value: "
+read timeInput
+if [ -n "$timeInput" ]
+then
+  timeOutput=$timeInput
+fi
+exdate=$( date -d "+${timeOutput} days" +%Y-%m-%d)
+response=$( curl -s -X POST \
+  -H "Authorization: SharedSecret ${admin_api_shared_secret}" \
+  -H "Content-Type: application/json" \
+  -d '{"max_usage": 1, "expiration_date": "'"$exdate"'"}' \
+  ${mreg_location}/api/token )
+tokenwords=$( echo $response | jq -r '.name' )
+msgdate=$( date -d "${timeOutput} days" +%b" "%d )
+link="${mreg_location}/register?token=""${tokenwords}"
+
+echo "Register account before ""$msgdate"" with this link (already in clipboard):"
+echo "$link"
+wl-copy "$link"
