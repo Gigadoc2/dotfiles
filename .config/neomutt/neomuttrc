@@ -97,6 +97,8 @@ bind  index,pager V vfolder-from-query
 macro index,pager a "<enter-command>unset resolve<enter><clear-flag>N<clear-flag>!<enter-command>set resolve<enter><save-message>=Archive<enter>"
 macro index,pager S "<enter-command>unset resolve<enter><clear-flag>N<clear-flag>!<enter-command>set resolve<enter><save-message>=Spam<enter>"
 macro index,pager G "<shell-escape>systemctl --user start --no-block mailsync.service<enter>" "Sync mail right now"
+macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"
 
 color attachment       color12  color0
 color bold        bold color229 color0
