@@ -88,9 +88,9 @@ output 'Goldstar Company Ltd  0x00009FBF' {
 output 'Acer Technologies XV273K 0x0000F387' {
     scale 2
     position 1280 0
-    mode 3840x2160@60Hz
+    mode 3840x2160@120Hz
     subpixel none
-    adaptive_sync on
+    adaptive_sync off
 }
 
 output 'NEC Corporation LCD195NX 94T19400NB' {
