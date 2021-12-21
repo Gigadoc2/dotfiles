@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=CCCV Rocket.Chat
+Exec=chromium --enable-features=UseOzonePlatform --ozone-platform=wayland --user-data-dir=/home/gigadoc2/.local/share/crapp-cccvchat --app=https://rocket.cccv.de
+Type=Application
+Categories=Network;InstantMessaging;
