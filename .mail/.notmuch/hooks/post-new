@@ -2,11 +2,9 @@
 
 set -f
 
-for msg in $(notmuch search --output messages --sort oldest-first 'tag:new and tag:unread and folder:Revreso/INBOX'); do
-	json="$(notmuch show --body=false --entire-thread=false --format=json "${msg}" | jq '.[0][0][0]')"
-	subj="$(echo "$json" | jq -r '.headers.Subject')"
-	from="$(echo "$json" | jq -r '.headers.From')"
-	notify-send "$from" "$subj"
-done
+count="$(notmuch count --output=messages tag:new)"
 
-notmuch tag -new 'tag:new'
+if [ "$count" -gt 0 ]; then
+	notify-send "New Mail" "$count new messages"
+	notmuch tag -new 'tag:new'
+fi
