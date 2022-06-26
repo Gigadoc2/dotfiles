@@ -99,6 +99,13 @@ output 'NEC Corporation LCD195NX 94T19400NB' {
     subpixel rgb
 }
 
+# Guest Desktop
+output 'Goldstar Company Ltd LG HDR 4K 0x00003BBD' {
+    scale 2
+    subpixel none
+    adaptive_sync off
+}
+
 ### Idle configuration
 #
 # Example configuration:
