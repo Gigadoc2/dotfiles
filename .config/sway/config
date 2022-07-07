@@ -151,29 +151,29 @@ exec /usr/bin/swayidle -w \
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 input "1:1:AT_Translated_Set_2_keyboard" {
-    xkb_layout us,de
-    xkb_variant intl
+    xkb_layout us
+    xkb_variant altgr-intl
     xkb_model "pc105"
     xkb_options "caps:hyper,altwin:swap_lalt_lwin,shift:both_capslock_cancel"
     xkb_numlock enabled
 }
 input "2689:517:CHESEN_PS2_to_USB_Converter" {
-    xkb_layout us,de
-    xkb_variant intl
+    xkb_layout us
+    xkb_variant altgr-intl
     xkb_model "pc105"
     xkb_options "caps:hyper,altwin:swap_lalt_lwin,shift:both_capslock_cancel"
     xkb_numlock enabled
 }
 input "1133:49702:G15_Gaming_Keyboard" {
-    xkb_layout us,de
-    xkb_variant intl
+    xkb_layout us
+    xkb_variant altgr-intl
     xkb_model "pc105"
     xkb_options "caps:hyper,altwin:swap_lalt_lwin,shift:both_capslock_cancel"
     xkb_numlock enabled
 }
 input "4617:8705:Dygma_Raise_Keyboard" {
-    xkb_layout us,de
-    xkb_variant intl
+    xkb_layout us
+    xkb_variant altgr-intl
     xkb_options "caps:hyper,altwin:swap_lalt_lwin,shift:both_capslock_cancel"
     xkb_numlock enabled
 }
