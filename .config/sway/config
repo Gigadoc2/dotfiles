@@ -386,6 +386,7 @@ bar {
     swaybar_command waybar
 }
 
+seat * shortcuts_inhibitor disable
 include ~/.config/sway/rules
 exec xrdb ~/.Xresources
 include ~/.config/sway/autostart_early
