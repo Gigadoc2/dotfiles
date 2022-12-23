@@ -35,9 +35,9 @@ set $term /usr/bin/systemd-run --user --scope -q \
     --slice=app.slice \
     -p PartOf=graphical-session.target \
     -p After=graphical-session.target \
-    --unit="app-sway-termite-$(systemd-id128 new).scope" \
+    --unit="app-sway-foot-$(systemd-id128 new).scope" \
     --description="sway-launched terminal" \
-    -- /usr/bin/termite
+    -- /usr/bin/foot
 # Launch applications through wofi, in a transient systemd scope.
 set $menu /usr/bin/systemd-run --user --scope -q \
     --slice=app.slice \
@@ -45,7 +45,7 @@ set $menu /usr/bin/systemd-run --user --scope -q \
     -p After=graphical-session.target \
     --unit="app-sway-wofi-$(systemd-id128 new).scope" \
     --description="sway-wofi-launched application" \
-    -- /usr/bin/wofi -G -S drun -i -t /usr/bin/termite
+    -- /usr/bin/wofi -G -S drun -i -t /usr/bin/foot
 # Same thing but for shell commands
 set $run /usr/bin/systemd-run --user --scope -q \
     --slice=app.slice \
