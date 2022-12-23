@@ -36,3 +36,6 @@ user_pref("signon.rememberSignons", false); // 5003
 
 // i sometimes read that
 user_pref("browser.messaging-system.whatsNewPanel.enabled", true); // 9003
+
+// not an override: disable pocket, remove menu entries
+user_pref("extensions.pocket.enabled", false);
