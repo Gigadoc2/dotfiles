@@ -1,0 +1,14 @@
+#!/bin/bash --norc
+
+if [ -z "$FUZZEL_DESKTOP_FILE_ID" ]; then
+	appID="$(basename $1)"
+else
+	appID="$FUZZEL_DESKTOP_FILE_ID"
+fi
+
+exec /usr/bin/systemd-run --user --scope -q \
+	--slice=app.slice \
+	--property=PartOf=graphical-session.target \
+	--property=After=graphical-session.target \
+	--unit="app-sway-${appID}-${RANDOM}.scope" \
+	-- $@

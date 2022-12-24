@@ -39,21 +39,7 @@ set $term /usr/bin/systemd-run --user --scope -q \
     --description="sway-launched terminal" \
     -- /usr/bin/foot
 # Launch applications through wofi, in a transient systemd scope.
-set $menu /usr/bin/systemd-run --user --scope -q \
-    --slice=app.slice \
-    -p PartOf=graphical-session.target \
-    -p After=graphical-session.target \
-    --unit="app-sway-wofi-$(systemd-id128 new).scope" \
-    --description="sway-wofi-launched application" \
-    -- /usr/bin/wofi -G -S drun -i -t /usr/bin/foot
-# Same thing but for shell commands
-set $run /usr/bin/systemd-run --user --scope -q \
-    --slice=app.slice \
-    -p PartOf=graphical-session.target \
-    -p After=graphical-session.target \
-    --unit="app-sway-wofi-sh-$(systemd-id128 new).scope" \
-    --description="sway-wofi-launched command" \
-    -- /usr/bin/wofi -G -S run -i
+set $menu /usr/bin/fuzzel
 # Set up workspaces with names
 set $ws1 1::sh
 set $ws2 2:www
@@ -215,9 +201,6 @@ font Cantarell 9
 
     # start the app launcher
     bindsym $mod+d exec $menu
-
-    # start the command launcher
-    bindsym $mod+Shift+d exec $run
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
