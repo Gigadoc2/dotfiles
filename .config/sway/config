@@ -378,14 +378,6 @@ bindsym $mod+r mode "resize"
     bindsym Print exec grim -g "$(slurp)" - | tee /tmp/screenshot.png | wl-copy
     bindsym Shift+Print exec grim - | tee /tmp/screenshot.png | wl-copy
 
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
-bar {
-    swaybar_command waybar
-}
-
 seat * shortcuts_inhibitor disable
 include ~/.config/sway/rules
 exec xrdb ~/.Xresources
