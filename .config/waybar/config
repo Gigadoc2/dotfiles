@@ -24,11 +24,13 @@
     },
 
     "pulseaudio": {
-        "format": "{icon} {volume}%",
+        "format": "{format_source} {icon} {volume}%",
         "format-muted": " mutd",
         "format-icons": {
             "default": ["", ""]
         },
+        "format-source": "<span foreground=\"#cc241d\">●</span>",
+        "format-source-muted": "",
         "tooltip": false
     },
 
