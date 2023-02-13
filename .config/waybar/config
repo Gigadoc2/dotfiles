@@ -19,13 +19,13 @@
 
     "network#wifi": {
         "interface": "wlan0",
-        "format": " {essid} ({signaldBm})",
+        "format": " {essid} ({signaldBm})",
         "tooltip": false
     },
 
     "pulseaudio": {
         "format": "{format_source} {icon} {volume}%",
-        "format-muted": " mutd",
+        "format-muted": " mutd",
         "format-icons": {
             "default": ["", ""]
         },
@@ -38,7 +38,7 @@
         "exec": "~/Projekte/desktop/waybar-scripts/battery.py BAT0",
         "return-type": "json",
         "format": "{icon} {}",
-        "format-icons": ["", "", "", ""]
+        "format-icons": ["", "", "", "", ""]
     },
 
     "clock": {
