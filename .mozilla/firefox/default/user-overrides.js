@@ -29,7 +29,7 @@ user_pref("layout.css.font-visibility.trackingprotection", 1); // 1402
 user_pref("accessibility.force_disabled", 0); // 2601
 
 // Don't disable extensions in the application directory
-pref("extensions.autoDisableScopes", 11); // 2660
+user_pref("extensions.autoDisableScopes", 11); // 2660
 
 // disable built-in password manager
 user_pref("signon.rememberSignons", false); // 5003
