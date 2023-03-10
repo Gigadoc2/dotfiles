@@ -6,7 +6,7 @@
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
     "modules-right":
-        ["network#wifi", "pulseaudio",
+        ["bluetooth", "network#wifi", "pulseaudio",
         "custom/bat0", "clock"],
 
     "sway/mode": {
@@ -17,9 +17,18 @@
         "tooltip": false
     },
 
+    "bluetooth": {
+        "format-disabled": "",
+        "format-off": "",
+        "format-on": " ",
+        "format-connected": " {device_alias}",
+        "tooltip": false
+    },
+
     "network#wifi": {
         "interface": "wlan0",
         "format": " {essid} ({signaldBm})",
+        "format-disconnected": " ",
         "tooltip": false
     },
 
