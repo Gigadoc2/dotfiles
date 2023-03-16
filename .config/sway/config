@@ -38,7 +38,7 @@ set $term /usr/bin/systemd-run --user --scope -q \
     --unit="app-sway-foot-$(systemd-id128 new).scope" \
     --description="sway-launched terminal" \
     -- /usr/bin/foot
-# Launch applications through wofi, in a transient systemd scope.
+# Launch applications through fuzzel, in a transient systemd scope.
 set $menu /usr/bin/fuzzel
 # Set up workspaces with names
 set $ws1 1::sh
