@@ -350,7 +350,7 @@ bindsym $mod+r mode "resize"
 #
     # Close last notification
     bindsym $mod+n exec makoctl dismiss
-    bindsym $mod+m exec makoctl menu wofi -d -p 'Choose Action: '
+    bindsym $mod+m exec makoctl menu $menu -d -p 'Choose Action: '
 #
 # Custom launch shortcuts
 #
