@@ -371,7 +371,6 @@ bindsym $mod+r mode "resize"
 
 seat * shortcuts_inhibitor disable
 include ~/.config/sway/rules
-exec xrdb ~/.Xresources
 include ~/.config/sway/autostart_early
 exec dbus-update-activation-environment --systemd DISPLAY I3SOCK SWAYSOCK WAYLAND_DISPLAY XCURSOR_SIZE XCURSOR_THEME XDG_CURRENT_DESKTOP=sway
 exec systemctl --user start sway-session.target
