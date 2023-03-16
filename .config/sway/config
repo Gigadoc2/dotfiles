@@ -170,6 +170,14 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
     natural_scroll enabled
     tap enabled
 }
+input "2:10:TPPS/2_Elan_TrackPoint" {
+    pointer_accel -0.4
+}
+input "1267:12693:ELAN0678:00_04F3:3195_Touchpad" {
+    natural_scroll enabled
+    tap enabled
+    scroll_factor 0.2
+}
 
 ### Design and colors
 # Borders & Decoration
