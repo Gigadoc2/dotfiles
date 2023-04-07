@@ -9,6 +9,10 @@
         ["bluetooth", "network#wifi", "pulseaudio",
         "custom/bat0", "clock"],
 
+    "sway/workspaces": {
+        "smooth-scrolling-threshold": 4.0
+    },
+
     "sway/mode": {
         "tooltip": false
     },
