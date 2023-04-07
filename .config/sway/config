@@ -282,6 +282,17 @@ font Cantarell 9
     # move workspaces to different outputs
     bindsym $mod+o focus output right
     bindsym $mod+Shift+o move workspace to output right
+
+    # Allow switching between workspaces with left and right swipes
+    bindgesture swipe:3:right workspace prev
+    bindgesture swipe:3:left workspace next
+
+    # Allow container movements by pinching them
+    bindgesture pinch:inward+up move up
+    bindgesture pinch:inward+down move down
+    bindgesture pinch:inward+left move left
+    bindgesture pinch:inward+right move right
+
 #
 # Layout stuff:
 #
@@ -368,6 +379,12 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86AudioNext exec playerctl next
     bindsym Print exec grim -g "$(slurp)" - | tee /tmp/screenshot.png | wl-copy
     bindsym Shift+Print exec grim - | tee /tmp/screenshot.png | wl-copy
+
+#
+# Custom launch gestures
+#
+
+    bindgesture swipe:4:down exec loginctl lock-session
 
 seat * shortcuts_inhibitor disable
 include ~/.config/sway/rules
