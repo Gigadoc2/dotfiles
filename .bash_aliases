@@ -15,6 +15,7 @@ alias cp='cp -i --reflink=auto'
 alias vim='$EDITOR'
 alias edit='$EDITOR'
 alias more='less'
+alias host='resolvectl query'
 
 ## Abbreviations
 alias e='$EDITOR'
