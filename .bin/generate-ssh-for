@@ -1,0 +1,32 @@
+#!/usr/bin/bash
+
+set -eo pipefail
+
+if [[ -z "$1" ]] || [[ "${2:-no-token}" != "no-token" ]]; then
+	echo "Usage: $(basename $0) <purpose> [no-token]"
+	exit 1
+fi
+
+passphrase="$(pass SSH-Keys/passphrase)"
+key_filename="id_${1//-/_}"
+key_path="${HOME}/.ssh/$key_filename"
+
+# Note: this leaks the passphrase to any process currently running! In my case,
+# the main security against malware comes from the security key itself, the
+# passphrase is just here as an extra layer in case I leak the key file somehow,
+# do not notice and then later also lose the security key.
+case "$2" in
+	"no-token")
+		keygen_type=ed25519
+		keygen_args=""
+		;;
+	*)
+		keygen_type=ed25519-sk
+		keygen_args="-O no-touch-required"
+		;;
+esac
+ssh-keygen -t "$keygen_type" -C "gd2-$1" -f "$key_path" -N "$passphrase" $keygen_args
+pass insert -m "SSH-Keys/Yubikey/${key_filename}" < "${key_path}"
+pass insert -m "SSH-Keys/Yubikey/${key_filename}.pub" < "${key_path}.pub"
+wl-copy < "${key_path}.pub"
+echo "Done and copied to clipboard. Maybe pass git push soon?"
