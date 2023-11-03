@@ -6,7 +6,7 @@
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
     "modules-right":
-        ["bluetooth", "network#wifi", "pulseaudio",
+        ["tray", "bluetooth", "network#wifi", "pulseaudio",
         "custom/bat0", "clock"],
 
     "sway/workspaces": {
