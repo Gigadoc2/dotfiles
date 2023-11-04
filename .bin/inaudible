@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ "$#" -ne 2 ]; then
+	echo "Usage: $(basename $0) <encrypted mp4> <decrypted mp4>"
+	exit 1
+fi
+if [ -z "$AAX_ACTIVATION_BYTES" ]; then
+	echo "Error: AAX_ACTIVATION_BYTES unset!"
+	exit 1
+fi
+
+ffmpeg -activation_bytes "${AAX_ACTIVATION_BYTES}" -i "$1" -c copy "$2"

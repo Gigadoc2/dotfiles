@@ -1,0 +1,13 @@
+#!/usr/bin/python3
+
+import signal
+from threading import Event
+
+def do_nothing(signum, frame):
+    """Do absolutely nothing"""
+    print(str(signum))
+
+signal.signal(signal.SIGINT, do_nothing)
+signal.signal(signal.SIGTERM, do_nothing)
+
+Event().wait()

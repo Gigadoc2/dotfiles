@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eo pipefail
+
+if [ "$#" -ne 1 ]; then echo "Usage: $(basename $0) <DOI>"; exit 1; fi
+curl -sfLH "Accept: application/x-bibtex" "http://dx.doi.org/$1" | sed "s/%2F/\//g" && printf "\n\n"

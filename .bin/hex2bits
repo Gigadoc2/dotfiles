@@ -1,0 +1,30 @@
+#!/usr/bin/python3
+
+import sys
+from binascii import a2b_hex
+
+def pretty_binary(binary):
+    bytestrings = []
+    for byte in binary:
+        bytestrings.append(format(byte, '08b'))
+
+    rstring = ''
+    for i, bytestring in enumerate(bytestrings):
+        rstring += bytestring
+        if i+1 == len(bytestrings):
+            continue
+        elif (i+1) % 6 == 0:
+            rstring += '\n'
+        else:
+            rstring += ' '
+
+    return rstring
+
+def main(argv):
+    assert len(argv) == 2
+
+    print(pretty_binary(a2b_hex(argv[1])))
+
+
+if __name__ == '__main__':
+    main(sys.argv)
