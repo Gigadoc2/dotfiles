@@ -7,7 +7,7 @@
     "modules-center": ["sway/window"],
     "modules-right":
         ["tray", "bluetooth", "network#wifi", "pulseaudio",
-        "custom/bat0", "clock"],
+        "privacy", "custom/bat0", "clock"],
 
     "sway/workspaces": {
         "smooth-scrolling-threshold": 4.0
@@ -37,13 +37,11 @@
     },
 
     "pulseaudio": {
-        "format": "{format_source} {icon} {volume}%",
+        "format": "{icon} {volume}%",
         "format-muted": " mutd",
         "format-icons": {
             "default": ["", ""]
         },
-        "format-source": "<span foreground=\"#cc241d\">●</span>",
-        "format-source-muted": "",
         "tooltip": false
     },
 

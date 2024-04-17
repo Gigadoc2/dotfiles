@@ -58,6 +58,10 @@ button {
     margin-right: 0px;
 }
 
+#privacy-item {
+    color: #cc241d;
+}
+
 #custom-bat0.charging,
 #custom-bat1.charging {
     color: #9BC89D;
