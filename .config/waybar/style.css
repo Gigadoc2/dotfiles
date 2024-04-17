@@ -1,7 +1,7 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: Cantarell, "Font Awesome 6 Free";
+    font-family: "Cantarell", "Font Awesome 6 Free";
     font-size: 15px;
     min-height: 0;
     background: transparent;
@@ -45,7 +45,7 @@ button {
     padding: 0 8px;
 }
 
-#clock, #cpu, #custom-bat0, #custom-bat1, #memory, #backlight, #bluetooth, #network, #pulseaudio, #tray, #mode{
+#clock, #cpu, #custom-bat0, #custom-bat1, #memory, #backlight, #bluetooth, #network, #pulseaudio, #tray, #mode {
     padding: 0 8px;
     margin: 0 4px;
 }
