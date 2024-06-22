@@ -17,9 +17,6 @@ user_pref("webgl.disabled", false); // 4520 [mostly pointless if not using RFP]
 /* don't know why not to use geoclue if I've allowed my position to be sent? */
 user_pref("geo.provider.use_geoclue", true); // 0202
 
-/* please do not disable IPv6, seriously, thanks */
-user_pref("network.dns.disableIPv6", false); // 0701
-
 /* enable font visibility limiting, since I don't use RFP */
 user_pref("layout.css.font-visibility.private", 1); // 1402
 user_pref("layout.css.font-visibility.standard", 1); // 1402
