@@ -2,18 +2,22 @@
 
 set -f
 
+notify() {
+	notify-send --app-name='notmuch' -i mail-unread-symbolic -c email.arrived "New Mail" "$@"
+}
+
 count_inbox="$(notmuch count --output=messages 'tag:new and tag:unread and folder:Revreso/INBOX')"
 count_bst="$(notmuch count --output=messages 'tag:new and tag:unread and folder:Revreso/INBOX/Bestellungen')"
 count_whn="$(notmuch count --output=messages 'tag:new and tag:unread and folder:Revreso/INBOX/Wohnen')"
 
 if [ "$count_inbox" -gt 0 ]; then
-	notify-send "New Mail" "$count_inbox new message(s) in Inbox"
+	notify "$count_inbox new message(s) in Inbox"
 fi
 if [ "$count_bst" -gt 0 ]; then
-	notify-send "New Mail" "$count_bst new message(s) in Bestellungen"
+	notify "$count_bst new message(s) in Bestellungen"
 fi
 if [ "$count_whn" -gt 0 ]; then
-	notify-send "New Mail" "$count_whn new message(s) in Wohnen"
+	notify "$count_whn new message(s) in Wohnen"
 fi
 
 notmuch tag -new 'tag:new'
