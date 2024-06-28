@@ -360,8 +360,8 @@ bindsym $mod+r mode "resize"
 # Notification handling:
 #
     # Close last notification
-    bindsym $mod+n exec makoctl dismiss
-    bindsym $mod+m exec makoctl menu $menu -d -p 'Choose Action: '
+    bindsym $mod+n exec /usr/bin/swaync-client --close-latest
+    bindsym $mod+m exec /usr/bin/swaync-client --toggle-panel
 #
 # Custom launch shortcuts
 #

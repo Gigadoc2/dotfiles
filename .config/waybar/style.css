@@ -45,7 +45,8 @@ button {
     padding: 0 8px;
 }
 
-#clock, #cpu, #custom-bat0, #custom-bat1, #memory, #backlight, #bluetooth, #network, #pulseaudio, #tray, #mode {
+#clock, #cpu, #custom-bat0, #custom-bat1, #memory,
+#backlight, #bluetooth, #network, #pulseaudio, #tray, #mode {
     padding: 0 8px;
     margin: 0 4px;
 }
@@ -91,4 +92,9 @@ button {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+}
+
+#custom-notification.notification,
+#custom-notification.inhibited-notification {
+    color: #fabd2f;
 }

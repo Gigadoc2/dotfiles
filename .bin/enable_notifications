@@ -1,4 +1,3 @@
 #!/bin/sh
 
-sed -i --follow-symlinks '/invisible=1/c\invisible=0' ~/.config/mako/config
-makoctl reload
+exec swaync-client --inhibitor-remove "dev.gd.binscript.$INVOCATION_ID"
