@@ -1,0 +1,17 @@
+---
+configurations:
+  - host: mail.revreso.de
+    port: 993
+    tls: true
+    tlsOptions:
+      rejectUnauthorized: true
+      starttls: false
+    username: gigadoc2@revreso.de
+    passwordCMD: pass show Revreso/mail.revreso.de/Complex | head -n1
+    onNewMail: systemctl --user start mailsync.service
+    boxes:
+      - mailbox: INBOX
+      - mailbox: INBOX.Bestellungen
+      - mailbox: INBOX.Newsletter
+      - mailbox: INBOX.root
+      - mailbox: INBOX.Wohnen
