@@ -20,6 +20,23 @@ SSLType IMAPS
 SSLVersions TLSv1.2
 
 Channel revreso
-Master :revreso-remote:
-Slave :revreso-local:
+Far  :revreso-remote:
+Near :revreso-local:
+Patterns * INBOX*
+
+MaildirStore c3pb-local
+Path ~/.mail/C3PB/
+Inbox ~/.mail/C3PB/INBOX
+SubFolders Verbatim
+
+IMAPStore c3pb-remote
+Host imap.c3pb.de
+User gigadoc2
+PassCmd "pass show Chaos/c3pb.de | head -n1"
+SSLType IMAPS
+SSLVersions TLSv1.2
+
+Channel c3pb
+Far  :c3pb-remote:
+Near :c3pb-local:
 Patterns *

@@ -9,6 +9,7 @@ notify() {
 count_inbox="$(notmuch count --output=messages 'tag:new and tag:unread and folder:Revreso/INBOX')"
 count_bst="$(notmuch count --output=messages 'tag:new and tag:unread and folder:Revreso/INBOX/Bestellungen')"
 count_whn="$(notmuch count --output=messages 'tag:new and tag:unread and folder:Revreso/INBOX/Wohnen')"
+count_c3pb="$(notmuch count --output=messages 'tag:new and tag:unread and folder:C3PB/INBOX')"
 
 if [ "$count_inbox" -gt 0 ]; then
 	notify "$count_inbox new message(s) in Inbox"
@@ -18,6 +19,9 @@ if [ "$count_bst" -gt 0 ]; then
 fi
 if [ "$count_whn" -gt 0 ]; then
 	notify "$count_whn new message(s) in Wohnen"
+fi
+if [ "$count_c3pb" -gt 0 ]; then
+	notify "$count_c3pb new message(s) in C3PB Inbox"
 fi
 
 notmuch tag -new 'tag:new'
