@@ -2,12 +2,10 @@
  * Overrides for Arkenfox
  */
 
-/* override recipe: enable session restore ***/
+/* enable session restore ***/
 user_pref("browser.startup.page", 3); // 0102
-// user_pref("browser.privatebrowsing.autostart", false); // 0110 required if you had it set as true
-// user_pref("browser.sessionstore.privacy_level", 0); // 1003 optional to restore cookies/formdata
 user_pref("privacy.clearOnShutdown.history", false); // 2811
-// user_pref("privacy.cpd.history", false); // 2820 optional to match when you use Ctrl-Shift-Del
+user_pref("privacy.clearOnShutdown_v2.historyFormDataAndDownloads", false); // [FF128+] [DEFAULT: true]
 
 /* override recipe: RFP is not for me ***/
 user_pref("privacy.resistFingerprinting", false); // 4501
@@ -36,3 +34,5 @@ user_pref("browser.messaging-system.whatsNewPanel.enabled", true); // 9003
 
 // not an override: disable pocket, remove menu entries
 user_pref("extensions.pocket.enabled", false);
+// stop nagging about DRM
+user_pref("media.gmp-widevinecdm.visible", false);
