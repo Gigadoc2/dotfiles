@@ -29,3 +29,5 @@ for_window [title="^Emulator$"] floating enable
 for_window [title="Firefox - Weitergabe-Indikator"] floating enable
 for_window [app_id="openmw-launcher"] floating enable
 for_window [app_id="^qemu-system*"] floating enable
+for_window [app_id="^com.nextcloud.desktopclient.nextcloud$"] floating enable
+for_window [app_id="^org.kde.okular" title="^Neue Textnotiz"] floating enable
