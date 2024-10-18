@@ -1,1 +1,2 @@
+include "~/.config/kanshi/defaults"
 include "~/.config/kanshi/config.$(hostnamectl hostname)"
