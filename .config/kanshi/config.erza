@@ -1,0 +1,11 @@
+profile default {
+	output 'LG Electronics L1950H 0x00059EBF' disable
+	output 'Acer Technologies XV273K 0x91709387' enable mode 3840x2160 position 0,0 scale 2
+	output 'NEC Corporation LCD195NX 94T19400NB' enable mode 1280x1024@75Hz position 1920,0
+}
+
+profile extended {
+	output 'LG Electronics L1950H 0x00059EBF' enable mode 1280x1024 position 0,0
+	output 'Acer Technologies XV273K 0x91709387' enable mode 3840x2160 position 1280,0 scale 2
+	output 'NEC Corporation LCD195NX 94T19400NB' enable mode 1280x1024@75Hz position 3200,0
+}
