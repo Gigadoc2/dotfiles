@@ -38,6 +38,8 @@ alias lm='la | more'
 alias config='git --git-dir="$HOME/.local/share/dotfiles/" --work-tree="$HOME"'
 alias dotlist='git --git-dir="$HOME/.local/share/dotfiles/" --work-tree="$HOME"\
     ls-tree -r HEAD --name-only'
+alias dotnotlist='git --git-dir="$HOME/.local/share/dotfiles/" --work-tree="$HOME"\
+    ls-files . --exclude-standard --others'
 
 ## other
 alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
