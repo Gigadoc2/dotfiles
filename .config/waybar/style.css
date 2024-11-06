@@ -50,16 +50,7 @@ button {
 
 #clock, #cpu, #custom-bat0, #custom-bat1, #memory,
 #backlight, #bluetooth, #network, #pulseaudio, #tray, #mode {
-    padding: 0 8px;
-    margin: 0 4px;
-}
-
-#tray {
-    padding: 0 4px;
-}
-
-#clock {
-    margin-right: 0px;
+    margin: 0 8px;
 }
 
 #privacy-item {
