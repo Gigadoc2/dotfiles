@@ -7,7 +7,7 @@
     "modules-center": ["sway/window"],
     "modules-right":
         ["tray", "bluetooth", "network#wifi", "pulseaudio",
-        "privacy", "custom/bat0", "custom/notification", "clock"],
+        "privacy", "upower", "custom/notification", "clock"],
 
     "sway/workspaces": {
         "smooth-scrolling-threshold": 4.0
@@ -46,11 +46,9 @@
         "tooltip": false
     },
 
-    "custom/bat0": {
-        "exec": "~/Projekte/desktop/waybar-scripts/battery.py BAT0",
-        "return-type": "json",
-        "format": "{icon} {}",
-        "format-icons": ["", "", "", "", ""]
+    "upower": {
+        "icon-size": 16,
+        "tooltip": false
     },
 
     "custom/notification": {

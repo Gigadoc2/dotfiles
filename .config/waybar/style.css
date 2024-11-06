@@ -48,44 +48,13 @@ button {
     margin-bottom: -50px;
 }
 
-#clock, #cpu, #custom-bat0, #custom-bat1, #memory,
+#clock, #cpu, #upower, #memory,
 #backlight, #bluetooth, #network, #pulseaudio, #tray, #mode {
     margin: 0 8px;
 }
 
 #privacy-item {
     color: #cc241d;
-}
-
-#custom-bat0.charging,
-#custom-bat1.charging {
-    color: #9BC89D;
-}
-
-#custom-bat0.full,
-#custom-bat1.full {
-    color: #929292;
-}
-
-#custom-bat0.warning:not(.charging):not(.full),
-#custom-bat1.warning:not(.charging):not(.full) {
-    color: #fabd2f;
-}
-
-@keyframes blink {
-    to {
-        color: #cc241d;
-    }
-}
-
-#custom-bat0.critical:not(.charging):not(.full),
-#custom-bat1.critical:not(.charging):not(.full) {
-    color: #fabd2f;
-    animation-name: blink;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
 }
 
 #custom-notification.notification,
