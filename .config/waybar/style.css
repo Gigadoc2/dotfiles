@@ -43,6 +43,9 @@ button {
 
 #window {
     padding: 0 8px;
+    /* https://github.com/Alexays/Waybar/issues/2026 */
+    margin-top: -50px;
+    margin-bottom: -50px;
 }
 
 #clock, #cpu, #custom-bat0, #custom-bat1, #memory,
