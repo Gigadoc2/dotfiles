@@ -53,6 +53,10 @@ button {
     margin: 0 8px;
 }
 
+#upower {
+    min-width: 49px;
+}
+
 #privacy-item {
     color: #cc241d;
 }
