@@ -140,27 +140,27 @@ input "1:1:AT_Translated_Set_2_keyboard" {
     xkb_layout us
     xkb_variant altgr-intl
     xkb_model "pc105"
-    xkb_options "caps:hyper,altwin:swap_lalt_lwin,shift:both_capslock_cancel"
+    xkb_options "caps:super,altwin:swap_lalt_lwin,shift:both_capslock_cancel"
     xkb_numlock enabled
 }
 input "2689:517:CHESEN_PS2_to_USB_Converter" {
     xkb_layout us
     xkb_variant altgr-intl
     xkb_model "pc105"
-    xkb_options "caps:hyper,altwin:swap_lalt_lwin,shift:both_capslock_cancel"
+    xkb_options "caps:super,altwin:swap_lalt_lwin,shift:both_capslock_cancel"
     xkb_numlock enabled
 }
 input "1133:49702:G15_Gaming_Keyboard" {
     xkb_layout us
     xkb_variant altgr-intl
     xkb_model "pc105"
-    xkb_options "caps:hyper,altwin:swap_lalt_lwin,shift:both_capslock_cancel"
+    xkb_options "caps:super,altwin:swap_lalt_lwin,shift:both_capslock_cancel"
     xkb_numlock enabled
 }
 input "4617:8705:Dygma_Raise_Keyboard" {
     xkb_layout us
     xkb_variant altgr-intl
-    xkb_options "caps:hyper,altwin:swap_lalt_lwin,shift:both_capslock_cancel"
+    xkb_options "caps:super,altwin:swap_lalt_lwin,shift:both_capslock_cancel"
     xkb_numlock enabled
 }
 input "2:10:TPPS/2_IBM_TrackPoint" {
@@ -365,8 +365,8 @@ bindsym $mod+r mode "resize"
 #
 # Custom launch shortcuts
 #
-    bindsym --locked XF86MonBrightnessDown exec blight set -/14
-    bindsym --locked XF86MonBrightnessUp exec blight set +/14
+    bindsym --locked XF86MonBrightnessDown exec brightnessctl set --exponent=2 5%-
+    bindsym --locked XF86MonBrightnessUp exec brightnessctl set --exponent=2 +5%
     bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
     bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
     bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
