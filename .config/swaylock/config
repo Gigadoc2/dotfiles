@@ -2,6 +2,5 @@
 ignore-empty-password
 show-failed-attempts
 
-color=2d2d2d
-inside-color=000000b3
-image="/home/gigadoc2/.wallpaper_lock"
+color=000000
+image=~/.local/share/wallpaper/current
