@@ -2,9 +2,19 @@
 
 set -eo pipefail
 
-if [[ -z "$1" ]] || [[ "${2:-no-token}" != "no-token" ]]; then
-	echo "Usage: $(basename $0) <purpose> [no-token]"
+usage() {
+	echo "Usage: $(basename $0) <purpose> [no-token|touch-required]"
 	exit 1
+}
+
+if [[ -z "$1" ]]; then
+	usage
+fi
+
+if [[ -z "$2" ]]; then
+	type="touch-required"
+else
+	type="$2"
 fi
 
 passphrase="$(pass SSH-Keys/passphrase)"
@@ -20,9 +30,16 @@ case "$2" in
 		keygen_type=ed25519
 		keygen_args=""
 		;;
-	*)
+	"touch-required")
+		keygen_type=ed25519-sk
+		keygen_args=""
+		;;
+	"no-touch-required")
 		keygen_type=ed25519-sk
 		keygen_args="-O no-touch-required"
+		;;
+	*)
+		usage
 		;;
 esac
 ssh-keygen -t "$keygen_type" -C "gd2-$1" -f "$key_path" -N "$passphrase" $keygen_args
