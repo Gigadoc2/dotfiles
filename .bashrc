@@ -46,4 +46,6 @@ man() {
 }
 
 # pull in direnv
-eval "$(direnv hook bash)"
+if [[ -f /usr/bin/direnv ]]; then
+    eval "$(direnv hook bash)"
+fi
