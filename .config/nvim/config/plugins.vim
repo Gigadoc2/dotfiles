@@ -8,6 +8,7 @@ Plug 'tpope/vim-eunuch'
 
 " Syntax Files
 Plug 'saltstack/salt-vim'
+Plug 'rodjek/vim-puppet'
 Plug 'cometsong/ferm.vim'
 Plug 'PProvost/vim-ps1'
 Plug 'nfnty/vim-nftables'
