@@ -4,4 +4,5 @@ bind_mounts = [
 	'~/.cache/nix',
 	'~/.config/nix',
 	'~/.local/state/nix',
+	'~/Projekte/nix-envs',
 ]

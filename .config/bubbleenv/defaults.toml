@@ -58,6 +58,7 @@ ro_bind_mounts = [
 	'~/.bin',
 	'~/.config/nvim',
 	'~/.config/vifm',
+	'~/.gitconfig',
 	'~/.tmux.conf',
 	'~/Downloads',
 ]
