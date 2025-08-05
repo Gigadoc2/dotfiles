@@ -1,0 +1,67 @@
+[rootfs]
+real_dev = false
+real_proc = false
+real_home = false
+
+# The base system
+[rootfs.stage.1]
+ro_bind_mounts = [
+	'/etc',
+	'/usr',
+	'/opt',
+	'/srv',
+	'/sys/block',
+	'/sys/bus',
+	'/sys/class',
+	'/sys/dev',
+	'/sys/devices',
+	'/var',
+]
+tmpfs_mounts = [
+	'/run',
+	'/tmp',
+]
+symlinks = [
+	'usr/bin:/bin',
+	'usr/lib:/lib',
+	'usr/lib64:/lib64',
+	'usr/sbin:/sbin',
+]
+[rootfs.stage.2]
+ro_bind_mounts = [
+	'/run/systemd/resolve',
+	'/run/systemd/journal',
+]
+tmpfs_mounts = [
+	'/root',
+]
+
+# Add a user-mode Nix on top (which only works within bwrap)
+[rootfs.stage.10]
+ro_bind_mounts = [
+	'~/.var/nix:/nix',
+	'~/.cache/nix',
+	'~/.config/nix',
+	'~/.local/state/nix',
+]
+symlinks = [
+	'~/.local/state/nix/profiles/profile:~/.nix-profile'
+]
+
+# Personal preferences
+[rootfs.stage.50]
+ro_bind_mounts = [
+	'~/.bash_aliases',
+	'~/.bash_logout',
+	'~/.bash_profile',
+	'~/.bashrc',
+	'~/.bin',
+	'~/.config/nvim',
+	'~/.config/vifm',
+	'~/.tmux.conf',
+	'~/Downloads',
+]
+
+[exec]
+bwrap = ['/usr/bin/bwrap', '--unshare-user', '--unshare-uts']
+cmd = ['/bin/bash',  '-l']

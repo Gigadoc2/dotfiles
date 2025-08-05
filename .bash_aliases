@@ -18,7 +18,7 @@ alias more='less'
 alias host='resolvectl query'
 
 ## Abbreviations
-alias e='$EDITOR'
+alias e='bubbleenv'
 
 ## Privilege Escalation
 alias sudo='sudo ' # have aliases used with sudo as well

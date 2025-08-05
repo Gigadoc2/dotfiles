@@ -1,0 +1,4 @@
+[rootfs.stage.100]
+bind_mounts = [
+	'PATH_TO_SOMETHING',
+]

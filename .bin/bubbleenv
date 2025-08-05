@@ -1,0 +1,91 @@
+#!/usr/bin/python3
+
+import argparse
+import tomllib
+import os
+import sys
+
+
+def load_config(path):
+    with open(os.path.expanduser(path), 'rb') as f:
+        config = tomllib.load(f)
+    return config
+
+def merge_config(defaults, environment):
+    rootfs = defaults['rootfs'] | (environment.get('rootfs') or dict())
+    if 'rootfs' in environment and 'stage' in environment['rootfs']:
+        rootfs['stage'] = defaults['rootfs']['stage'] | environment['rootfs']['stage']
+    exec_ = defaults['exec'] | (environment.get('exec') or dict())
+    return {'rootfs': rootfs, 'exec': exec_}
+
+def parse_mount(string):
+    try:
+        src, dest = string.split(sep=':', maxsplit=2)
+    except ValueError:
+        src = string
+        dest = string
+    return os.path.expanduser(src), os.path.expanduser(dest)
+
+def construct_mount_args(environment, config, home_store):
+    args = []
+    rootfs = config['rootfs']
+    home = os.path.expanduser('~')
+
+    args += ['--tmpfs', '/']
+
+    if rootfs['real_dev']:
+        args += ['--dev-bind', '/dev', '/dev']
+    else:
+        args += ['--dev', '/dev']
+    if rootfs['real_proc']:
+        args += ['--bind /proc /proc']
+    else:
+        args += ['--proc', '/proc']
+    if rootfs['real_home']:
+        args += ['--bind', home, home]
+    else:
+        args += ['--bind', f"{home_store}/{environment}", home]
+
+    def key_as_int(item):
+        return int(item[0])
+    for _, stage in sorted(rootfs['stage'].items(), key=key_as_int):
+        for mount in stage.get('bind_mounts') or []:
+            src, dest = parse_mount(mount)
+            args += ['--bind', src, dest]
+        for mount in stage.get('ro_bind_mounts') or []:
+            src, dest = parse_mount(mount)
+            args += ['--ro-bind', src, dest]
+        for mount in stage.get('tmpfs_mounts') or []:
+            dest = os.path.expanduser(mount)
+            args += ['--tmpfs', dest]
+        for link in stage.get('symlinks') or []:
+            src, dest = parse_mount(link)
+            args += ['--symlink', src, dest]
+
+    return args
+
+def construct_exec_args(config):
+    return ['--'] + config['exec']['cmd']
+
+def main(args):
+    config_home = os.getenv("XDG_CONFIG_HOME") or "~/.config"
+    data_home   = os.getenv("XDG_DATA_HOME")   or "~/.local/share"
+    home_store  = os.path.expanduser(f"{data_home}/bubbleenv/homes")
+
+    defaults    = load_config(f"{config_home}/bubbleenv/defaults.toml")
+    environment = load_config(f"{config_home}/bubbleenv/envs/{args.environment}.toml")
+    config = merge_config(defaults, environment)
+
+    bwrap_argv = config['exec']['bwrap'].copy()
+    bwrap_argv += construct_mount_args(args.environment, config, home_store)
+    bwrap_argv += construct_exec_args(config)
+
+    os.execv(bwrap_argv[0], bwrap_argv)
+
+
+if __name__ ==  '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument("environment")
+    args = parser.parse_args()
+
+    sys.exit(main(args))
