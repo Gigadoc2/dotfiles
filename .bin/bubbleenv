@@ -64,8 +64,11 @@ def construct_mount_args(environment, config, home_store):
 
     return args
 
-def construct_exec_args(config):
-    return ['--'] + config['exec']['cmd']
+def construct_exec_args(environment, config):
+    args =  ['--setenv', 'BUBBLEENV', environment]
+    args += ['--']
+    args += config['exec']['cmd'].copy()
+    return args
 
 def main(args):
     config_home = os.getenv("XDG_CONFIG_HOME") or "~/.config"
@@ -78,7 +81,7 @@ def main(args):
 
     bwrap_argv = config['exec']['bwrap'].copy()
     bwrap_argv += construct_mount_args(args.environment, config, home_store)
-    bwrap_argv += construct_exec_args(config)
+    bwrap_argv += construct_exec_args(args.environment, config)
 
     os.execv(bwrap_argv[0], bwrap_argv)
 
