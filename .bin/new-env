@@ -1,0 +1,17 @@
+#!/bin/sh
+set -eo pipefail
+
+if [ "$#" -ne 2 ]; then
+	echo "Usage: $(basename $0) <environment_name> <shared_folder>"
+	exit 1
+fi
+
+if [ -e ~/.config/bubbleenv/envs/"$1".toml ]; then
+	echo "Environment $1 already exists!"
+	exit 1
+fi
+
+folder="$PWD/$2"
+
+mkdir -v -p ~/.local/share/bubbleenv/homes/"$1"
+sed -e "s|PATH_TO_SOMETHING|$folder|" < ~/.config/bubbleenv/template.toml > ~/.config/bubbleenv/envs/"$1".toml
