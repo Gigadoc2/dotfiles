@@ -40,7 +40,6 @@ tmpfs_mounts = [
 [rootfs.stage.10]
 ro_bind_mounts = [
 	'~/.var/nix:/nix',
-	'~/.cache/nix',
 	'~/.config/nix',
 	'~/.local/state/nix',
 ]
