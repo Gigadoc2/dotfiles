@@ -62,6 +62,12 @@ ro_bind_mounts = [
 	'~/Downloads',
 ]
 
+# I hate OpenSSH sometimes
+[rootfs.stage.60]
+tmpfs_mounts = [
+	'/etc/ssh/ssh_config.d',
+]
+
 [exec]
 bwrap = ['/usr/bin/bwrap', '--unshare-user', '--unshare-uts']
 cmd = ['/bin/bash',  '-l']
