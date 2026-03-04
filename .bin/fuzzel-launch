@@ -1,9 +1,9 @@
 #!/bin/bash --norc
 
-if [ -z "$FUZZEL_DESKTOP_FILE_ID" ]; then
+if [ -z "$DESKTOP_ENTRY_ID" ]; then
 	appID="$(basename $1)"
 else
-	appID="$FUZZEL_DESKTOP_FILE_ID"
+	appID="$DESKTOP_ENTRY_ID"
 fi
 
 exec /usr/bin/systemd-run --user --scope -q \
