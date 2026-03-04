@@ -7,7 +7,7 @@ configurations:
       rejectUnauthorized: true
     username: gigadoc2@revreso.de
     passwordCMD: pass show Revreso/mail.revreso.de/Complex | head -n1
-    onNewMail: systemctl --user start mailsync.service
+    onNewMail: systemctl --user start --no-block mailsync.service
     boxes:
       - mailbox: INBOX
       - mailbox: INBOX.Bestellungen
