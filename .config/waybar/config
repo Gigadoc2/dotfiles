@@ -6,7 +6,7 @@
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
     "modules-right":
-        ["tray", "bluetooth", "network#wifi", "pulseaudio",
+        ["tray", "bluetooth", "network#wifi", "custom/ts", "pulseaudio",
         "privacy", "upower", "custom/notification", "clock"],
 
     "sway/workspaces": {
@@ -35,6 +35,13 @@
         "format": " {essid} ({signaldBm})",
         "format-disconnected": " ",
         "tooltip": false
+    },
+
+    "custom/ts": {
+        "format": "➔ {text}",
+        "exec": "ts_exit_status",
+        "return-type": "json",
+        "hide-empty-text": true
     },
 
     "pulseaudio": {

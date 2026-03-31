@@ -65,3 +65,7 @@ button {
 #custom-notification.inhibited-notification {
     color: #fabd2f;
 }
+
+#custom-ts.exit-active {
+    color: #fabd2f;
+}

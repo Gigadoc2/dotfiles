@@ -1,0 +1,23 @@
+#!/usr/bin/bash
+
+echo_exit_node() {
+	node=$(tailscale status --json | jq -r '.Peer[]? | select(.ExitNode == true).DNSName | split(".")[0]')
+	if [[ -z $node ]]; then
+		echo "{\"class\": \"exit-inactive\"}"
+	else
+		echo "{\"text\": \"$node\", \"class\": \"exit-active\"}"
+	fi
+}
+
+echo_exit_node
+
+ip monitor route dev tailscale0 | while read event; do
+	case "$event" in
+		'Deleted default table 52')
+			echo_exit_node
+			;;
+		'default table 52')
+			echo_exit_node
+			;;
+	esac
+done
