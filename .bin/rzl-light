@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+
+set -eo pipefail
+
+usage() {
+	echo "Usage: $(basename $0) <whiteboard/mitte/beamer> <brightness byte>"
+	exit 1
+}
+
+if [[ -z "$2" ]]; then
+	usage
+fi
+
+mosquitto_pub -h mqtt.rzl.so -t shellies/Haupt_RGBW_$1/color/0/set -m "{\"mode\": \"color\", \"red\": 0, \"green\": 0, \"blue\": 0, \"gain\": 100, \"white\": $2, \"effect\": 0, \"turn\": \"on\", \"transition\": 15}"
