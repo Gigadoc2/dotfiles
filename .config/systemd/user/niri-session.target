@@ -1,0 +1,13 @@
+[Unit]
+Description=niri compositor session
+# See the part about graphical-session.target
+Documentation=man:systemd.special(7)
+
+# The upstream niri.service is doing most of the heavy lifting already, but I
+# want a target instead of a service. So this target gets pulled in by niri but
+# sorted After= it.
+
+After=niri.service
+
+[Install]
+WantedBy=niri.service
