@@ -58,7 +58,7 @@ input {
 
     // Focus windows and outputs automatically when moving the mouse into them.
     // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
-    focus-follows-mouse max-scroll-amount="33%"
+    focus-follows-mouse max-scroll-amount="0%"
 }
 
 // You can configure outputs by their name, which you can find
@@ -149,7 +149,7 @@ layout {
     // You can change how the focus ring looks.
     focus-ring {
         // Uncomment this line to disable the focus ring.
-        // off
+        off
 
         // How many logical pixels the ring extends out from the windows.
         width 1
@@ -188,14 +188,14 @@ layout {
     border {
         // The settings are the same as for the focus ring.
         // If you enable the border, you probably want to disable the focus ring.
-        off
+        // off
 
-        width 4
-        active-color "#ffc87f"
-        inactive-color "#505050"
+        width 1.5
+        active-color "#484848"
+        inactive-color "#2d2d2d"
 
         // Color of the border around windows that request your attention.
-        urgent-color "#9b0000"
+        urgent-color "#98971a"
 
         // Gradients can use a few different interpolation color spaces.
         // For example, this is a pastel rainbow gradient via in="oklch longer hue".
@@ -248,8 +248,8 @@ layout {
     // Top and bottom struts will simply add outer gaps in addition to the area occupied by
     // layer-shell panels and regular gaps.
     struts {
-        left 24
-        right 24
+        left 16
+        right 16
         top -4
         bottom -4
     }
@@ -268,7 +268,7 @@ layout {
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
-    // skip-at-startup
+    skip-at-startup
 }
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -395,12 +395,12 @@ binds {
     Mod+Shift+Q repeat=false { close-window; }
 
     Mod+Left  { focus-column-left; }
-    Mod+Down  { focus-window-down; }
-    Mod+Up    { focus-window-up; }
+    Mod+Down  { focus-window-or-workspace-down; }
+    Mod+Up    { focus-window-or-workspace-up; }
     Mod+Right { focus-column-right; }
     Mod+H     { focus-column-left; }
-    Mod+J     { focus-window-down; }
-    Mod+K     { focus-window-up; }
+    Mod+J     { focus-window-or-workspace-down; }
+    Mod+K     { focus-window-or-workspace-up; }
     Mod+L     { focus-column-right; }
 
     Mod+Shift+Left  { move-column-left; }
@@ -638,8 +638,8 @@ binds {
     //Mod+Shift+P { power-off-monitors; }
 
     // Handle Notifications with swaync
-    Mod+N { spawn "/usr/bin/swaync-client" "--close-latest"; }
-    Mod+M { spawn "/usr/bin/swaync-client" "--toggle-panel"; }
+    Mod+N hotkey-overlay-title="Dismiss notification" { spawn "/usr/bin/swaync-client" "--close-latest"; }
+    Mod+M hotkey-overlay-title="Show notification panel" { spawn "/usr/bin/swaync-client" "--toggle-panel"; }
 }
 
 // Include machine-specific addon config
