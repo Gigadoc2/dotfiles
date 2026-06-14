@@ -8,3 +8,4 @@ dconf load / < "${HOME}/.config/dconf/overwrite.ini"
 echo "Linking host-specific files"
 hostname="$(hostnamectl hostname)" || exit 1
 ln -s "config.$hostname" "${HOME}/.config/mako/config" || true
+ln -s "config.$hostname.kdl" "${HOME}/.config/niri/config.local.kdl" || true

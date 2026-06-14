@@ -641,3 +641,6 @@ binds {
     Mod+N { spawn "/usr/bin/swaync-client" "--close-latest"; }
     Mod+M { spawn "/usr/bin/swaync-client" "--toggle-panel"; }
 }
+
+// Include machine-specific addon config
+include optional=true "./config.local.kdl"
