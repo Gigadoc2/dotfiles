@@ -1,0 +1,15 @@
+[Unit]
+Description=Lock the screen on lid/suspend/command
+Documentation=man:swayidle(1)
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+
+[Service]
+Type=exec
+ExecStart=/usr/bin/swayidle \
+	before-sleep "systemctl --user start swaylock.service" \
+	lock "systemctl --user start swaylock.service" \
+	unlock "systemctl --user stop swaylock.service" \
+	idlehint 300
+Slice=session.slice
