@@ -1,8 +1,10 @@
-// Open messengers with 2/3rds by default to make them usable
+// Open messengers (or other three-column style apps) with 2/3rd width
+// by default to make them usable
 window-rule {
 	match app-id=r#"^org\.signal\.Signal$"#
 	match app-id=r#"^im\.riot\.Riot$"#
 	match app-id=r#"^Threema$"#
+	match app-id=r#"^Bitwarden$"#
 
 	default-column-width { proportion 0.66667; }
 }
