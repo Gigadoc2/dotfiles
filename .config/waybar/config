@@ -3,8 +3,8 @@
     "position": "top",
     "height": 26,
 
-    "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["sway/window"],
+    "modules-left": ["sway/workspaces", "niri/workspaces", "sway/mode"],
+    "modules-center": ["sway/window", "niri/window"],
     "modules-right":
         ["tray", "bluetooth", "network#wifi", "custom/ts", "pulseaudio",
         "privacy", "upower", "custom/notification", "clock"],
@@ -19,6 +19,12 @@
 
     "sway/window": {
         "max-length": 50,
+        "tooltip": false
+    },
+
+    "niri/window": {
+        "max-length": 50,
+        "separate-outputs": true,
         "tooltip": false
     },
 
