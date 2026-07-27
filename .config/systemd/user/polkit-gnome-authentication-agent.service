@@ -1,6 +1,11 @@
 [Unit]
 Description=Legacy GNOME polkit agent
-PartOf=graphical-session-pre.target
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+
+# Make sure we have a polkit agent at least before autostart stuff
+Before=xdg-desktop-autostart.target
 
 [Service]
 Type=simple

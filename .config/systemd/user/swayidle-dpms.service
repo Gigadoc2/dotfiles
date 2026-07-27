@@ -2,11 +2,15 @@
 Description=Shut down the screens when idle
 Documentation=man:swayidle(1)
 StopWhenUnneeded=true
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
 
 [Service]
 Type=simple
 ExecStart=/usr/bin/swayidle \
-	timeout 300 'swaymsg "output * dpms off"' \
+	timeout 30 'swaymsg "output * dpms off"' \
+	timeout 30 'niri msg action power-off-monitors' \
 	resume 'swaymsg "output * dpms on"'
 Slice=session.slice
 

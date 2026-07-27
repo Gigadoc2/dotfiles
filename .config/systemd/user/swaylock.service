@@ -1,7 +1,9 @@
 [Unit]
 Description=Screen locker for wayland
 Documentation=man:swaylock(1)
-PartOf=graphical-session-pre.target
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
 Wants=swayidle-dpms.service
 
 # End the session when the locker has somehow been terminated uncleanly
