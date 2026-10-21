@@ -1,23 +1,10 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "Cantarell", "Font Awesome 6 Free";
-    font-size: 15px;
+    font-family: "Berkeley Mono", "Font Awesome 6 Free";
+    font-size: 14px;
     min-height: 0;
     background: transparent;
-}
-
-window {
-    background: #2d2d2d;
-    color: #dddddd;
-}
-
-window#waybar {
-    border-bottom: 1px solid #484848;
-}
-
-button {
-    color: #dddddd;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -25,11 +12,10 @@ button {
     padding: 0 5px;
     background: transparent;
     color: #dcdcdc;
-    border-bottom: 1px solid #484848;
 }
 
 #workspaces button.focused {
-    background: #525252;
+    border-bottom: 2px solid rgba(82,82,82,0.8);
 }
 
 #workspaces button.urgent {
@@ -54,7 +40,7 @@ button {
 }
 
 #upower {
-    min-width: 49px;
+    min-width: 40px;
 }
 
 #privacy-item {
