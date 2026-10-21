@@ -575,6 +575,7 @@ binds {
 
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
+    Mod+Shift+B hotkey-overlay-title="Toggle fake fullscreen" { toggle-windowed-fullscreen; }
 
     // While maximize-column leaves gaps and borders around the window,
     // maximize-window-to-edges doesn't: the window expands to the edges of the screen.
