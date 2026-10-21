@@ -4,5 +4,5 @@ After=graphical-session.target
 Requisite=graphical-session.target
 
 [Service]
-ExecStart=/usr/bin/swaybg -m fill -i "%h/.local/share/wallpaper/current"
+ExecStart=/usr/bin/swaybg -m center -i "%h/.local/share/wallpaper/yorha-logo.jpg"
 Restart=on-failure
