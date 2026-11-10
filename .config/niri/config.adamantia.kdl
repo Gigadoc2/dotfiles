@@ -3,6 +3,7 @@
 window-rule {
 	match app-id=r#"^org\.signal\.Signal$"#
 	match app-id=r#"^im\.riot\.Riot$"#
+	match app-id=r#"^moe\.sable\.client$"#
 	match app-id=r#"^Threema$"#
 	match app-id=r#"^Bitwarden$"#
 
