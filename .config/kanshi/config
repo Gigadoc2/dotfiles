@@ -1,2 +1,7 @@
 include "~/.config/kanshi/defaults"
 include "~/.config/kanshi/config.$(hostnamectl hostname)"
+
+# this just applies the defaults if no profile matches
+profile fallback {
+	...output *
+}

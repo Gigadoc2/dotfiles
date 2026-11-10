@@ -1,3 +1,15 @@
+// Output settings specifically for this notebook. I put the built-in screen
+// here instead of the kanshi config, because kanshi only applies anything on a
+// full profile match (even the defaults). In other words, kanshi does nothing
+// when there is an unkown monitor connected already at startup. In that case, I
+// still like the built-in screen to be set up correctly. It might be possible
+// to achieve that with a "match everything" fallback in kanshi nowadays, but it
+// is probably still better to give niri this information at startup instead of
+// waiting for kanshi to reconfigure outputs afterwards.
+output "eDP-1" {
+	scale 2
+}
+
 // Open messengers (or other three-column style apps) with 2/3rd width
 // by default to make them usable
 window-rule {
